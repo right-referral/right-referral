@@ -23,14 +23,14 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.darkText,
+        backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
           'Candidates',
-          style: FlutterFlowTheme.title3.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.tertiaryColor,
-          ),
+          style: FlutterFlowTheme.of(context).title3.override(
+                fontFamily: 'Lexend Deca',
+                color: FlutterFlowTheme.of(context).tertiaryColor,
+              ),
         ),
         actions: [
           FlutterFlowIconButton(
@@ -40,7 +40,7 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
             buttonSize: 60,
             icon: Icon(
               Icons.search_rounded,
-              color: FlutterFlowTheme.tertiaryColor,
+              color: FlutterFlowTheme.of(context).tertiaryColor,
               size: 30,
             ),
             onPressed: () async {
@@ -75,7 +75,7 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                         width: 50,
                         height: 50,
                         child: SpinKitThreeBounce(
-                          color: FlutterFlowTheme.primaryColor,
+                          color: FlutterFlowTheme.of(context).primaryColor,
                           size: 50,
                         ),
                       ),
@@ -122,7 +122,8 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                                     width: 50,
                                     height: 50,
                                     child: SpinKitThreeBounce(
-                                      color: FlutterFlowTheme.primaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
                                       size: 50,
                                     ),
                                   ),
@@ -146,7 +147,8 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                                   width: 100,
                                   height: 70,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.tertiaryColor,
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
                                     boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4,
@@ -156,7 +158,8 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                                     ],
                                     borderRadius: BorderRadius.circular(8),
                                     border: Border.all(
-                                      color: FlutterFlowTheme.lineColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .lineColor,
                                       width: 1,
                                     ),
                                   ),
@@ -194,7 +197,9 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                                           children: [
                                             Text(
                                               containerUsersRecord.displayName,
-                                              style: FlutterFlowTheme.subtitle1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle1,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -205,7 +210,8 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                                                   Text(
                                                     containerUsersRecord
                                                         .positionTitle,
-                                                    style: FlutterFlowTheme
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText2,
                                                   ),
                                                   Padding(
@@ -219,15 +225,18 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                                                         maxChars: 16,
                                                         replacement: '…',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontSize: 12,
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText2
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontSize: 12,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],

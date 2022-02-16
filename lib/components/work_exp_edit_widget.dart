@@ -29,14 +29,6 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
   TextEditingController textController3;
 
   @override
-  void initState() {
-    super.initState();
-    companyController = TextEditingController();
-    postitionTitleController = TextEditingController();
-    textController3 = TextEditingController();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return StreamBuilder<List<WorkHistoryRecord>>(
       stream: queryWorkHistoryRecord(
@@ -50,7 +42,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -69,7 +61,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 1,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.tertiaryColor,
+            color: FlutterFlowTheme.of(context).tertiaryColor,
           ),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
@@ -87,17 +79,17 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                   child: Text(
                     'Work Experience',
-                    style: FlutterFlowTheme.title2.override(
-                      fontFamily: 'Lexend Deca',
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: FlutterFlowTheme.of(context).title2.override(
+                          fontFamily: 'Lexend Deca',
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                   child: Text(
                     'Add Credentials below.',
-                    style: FlutterFlowTheme.bodyText2,
+                    style: FlutterFlowTheme.of(context).bodyText2,
                   ),
                 ),
                 Padding(
@@ -109,13 +101,20 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                         child: TextFormField(
-                          controller: postitionTitleController,
+                          controller: postitionTitleController ??=
+                              TextEditingController(
+                            text: containerWorkHistoryRecord.jobTitle,
+                          ),
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.title3.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            labelText: 'Position Title',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .title3
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -137,23 +136,30 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.title3.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.darkText,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: FlutterFlowTheme.of(context).title3.override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).darkText,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                         child: TextFormField(
-                          controller: companyController,
+                          controller: companyController ??=
+                              TextEditingController(
+                            text: containerWorkHistoryRecord.companyName,
+                          ),
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            labelText: 'Company',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -175,16 +181,18 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.darkText,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).darkText,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                       ),
                       Divider(
                         thickness: 1,
-                        color: FlutterFlowTheme.lineColor,
+                        color: FlutterFlowTheme.of(context).lineColor,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
@@ -204,6 +212,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                       setState(() => datePicked1 = date);
                                     },
                                     currentTime: getCurrentTimestamp,
+                                    minTime: DateTime(0, 0, 0),
                                   );
                                 },
                                 child: Container(
@@ -215,11 +224,13 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                         MediaQuery.of(context).size.width * 0.4,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.tertiaryColor,
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
                                     borderRadius: BorderRadius.circular(8),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: FlutterFlowTheme.lineColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .lineColor,
                                       width: 2,
                                     ),
                                   ),
@@ -240,12 +251,15 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                           children: [
                                             Text(
                                               'Start Date',
-                                              style: FlutterFlowTheme.bodyText1
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
                                                   .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: FlutterFlowTheme
-                                                    .grayIcon400,
-                                              ),
+                                                    fontFamily: 'Lexend Deca',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .grayIcon400,
+                                                  ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -254,7 +268,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                                 dateTimeFormat(
                                                     'yMMMd', datePicked1),
                                                 style:
-                                                    FlutterFlowTheme.bodyText1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1,
                                               ),
                                             ),
                                           ],
@@ -265,7 +280,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                                   0, 0, 16, 0),
                                           child: Icon(
                                             Icons.calendar_today_outlined,
-                                            color: FlutterFlowTheme.grayIcon400,
+                                            color: FlutterFlowTheme.of(context)
+                                                .grayIcon400,
                                             size: 24,
                                           ),
                                         ),
@@ -284,6 +300,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                     setState(() => datePicked2 = date);
                                   },
                                   currentTime: getCurrentTimestamp,
+                                  minTime: DateTime(0, 0, 0),
                                 );
                               },
                               child: Container(
@@ -294,7 +311,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                       MediaQuery.of(context).size.width * 0.4,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.tertiaryColor,
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
                                   borderRadius: BorderRadius.circular(8),
                                   border: Border.all(
                                     color: Color(0xFFDADADA),
@@ -318,12 +336,14 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                         children: [
                                           Text(
                                             'End Date',
-                                            style: FlutterFlowTheme.bodyText1
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
                                                 .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.grayIcon400,
-                                            ),
+                                                  fontFamily: 'Lexend Deca',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .grayIcon400,
+                                                ),
                                           ),
                                           Padding(
                                             padding:
@@ -332,7 +352,9 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                             child: Text(
                                               dateTimeFormat(
                                                   'yMMMd', datePicked2),
-                                              style: FlutterFlowTheme.bodyText1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                             ),
                                           ),
                                         ],
@@ -342,7 +364,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                             0, 0, 16, 0),
                                         child: Icon(
                                           Icons.calendar_today_outlined,
-                                          color: FlutterFlowTheme.grayIcon400,
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon400,
                                           size: 24,
                                         ),
                                       ),
@@ -361,14 +384,21 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                           children: [
                             Expanded(
                               child: TextFormField(
-                                controller: textController3,
+                                controller: textController3 ??=
+                                    TextEditingController(
+                                  text:
+                                      containerWorkHistoryRecord.jobDescription,
+                                ),
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.grayIcon400,
-                                  ),
+                                  labelText: 'What did you do here?',
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .grayIcon400,
+                                      ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
@@ -393,10 +423,13 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                       EdgeInsetsDirectional.fromSTEB(
                                           0, 4, 0, 12),
                                 ),
-                                style: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.darkText,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color:
+                                          FlutterFlowTheme.of(context).darkText,
+                                    ),
                                 maxLines: 4,
                                 keyboardType: TextInputType.multiline,
                               ),
@@ -406,7 +439,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                       ),
                       Divider(
                         thickness: 1,
-                        color: FlutterFlowTheme.lineColor,
+                        color: FlutterFlowTheme.of(context).lineColor,
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
@@ -436,11 +469,13 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                               options: FFButtonOptions(
                                 width: 270,
                                 height: 50,
-                                color: FlutterFlowTheme.darkText,
-                                textStyle: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Colors.white,
-                                ),
+                                color: FlutterFlowTheme.of(context).darkText,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                    ),
                                 elevation: 2,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,

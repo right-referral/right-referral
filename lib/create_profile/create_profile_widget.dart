@@ -7,7 +7,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_page_o_l_d/home_page_o_l_d_widget.dart';
+import '../main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -55,13 +55,13 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
         title: Text(
           'Create Profile',
           textAlign: TextAlign.start,
-          style: FlutterFlowTheme.subtitle1,
+          style: FlutterFlowTheme.of(context).subtitle1,
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       body: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
         child: SingleChildScrollView(
@@ -78,7 +78,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                       width: 75,
                       height: 75,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.background,
+                        color: FlutterFlowTheme.of(context).background,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: FlutterFlowIconButton(
@@ -87,7 +87,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         buttonSize: 48,
                         icon: Icon(
                           Icons.photo_camera_outlined,
-                          color: FlutterFlowTheme.grayIcon400,
+                          color: FlutterFlowTheme.of(context).grayIcon400,
                           size: 30,
                         ),
                         onPressed: () {
@@ -102,10 +102,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           controller: textController1,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.title3.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            labelText: 'Full Name',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .title3
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -127,10 +131,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.title3.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.darkText,
-                          ),
+                          style: FlutterFlowTheme.of(context).title3.override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).darkText,
+                              ),
                         ),
                       ),
                     ),
@@ -140,7 +144,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
               Divider(
                 height: 2,
                 thickness: 1,
-                color: FlutterFlowTheme.lineColor,
+                color: FlutterFlowTheme.of(context).lineColor,
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,
@@ -152,13 +156,16 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         controller: textController2,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelStyle: FlutterFlowTheme.title3.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.grayIcon400,
-                          ),
+                          labelText: 'Postition Title',
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .title3
+                              .override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).grayIcon400,
+                              ),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.lineColor,
+                              color: FlutterFlowTheme.of(context).lineColor,
                               width: 1,
                             ),
                             borderRadius: const BorderRadius.only(
@@ -168,7 +175,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.lineColor,
+                              color: FlutterFlowTheme.of(context).lineColor,
                               width: 1,
                             ),
                             borderRadius: const BorderRadius.only(
@@ -177,10 +184,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             ),
                           ),
                         ),
-                        style: FlutterFlowTheme.title3.override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.darkText,
-                        ),
+                        style: FlutterFlowTheme.of(context).title3.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).darkText,
+                            ),
                       ),
                     ),
                   ),
@@ -198,10 +205,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           controller: textController3,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            labelText: 'Short Description',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -223,10 +234,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.darkText,
-                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).darkText,
+                              ),
                           maxLines: 4,
                           keyboardType: TextInputType.multiline,
                         ),
@@ -238,7 +251,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
               Divider(
                 height: 2,
                 thickness: 1,
-                color: FlutterFlowTheme.lineColor,
+                color: FlutterFlowTheme.of(context).lineColor,
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
@@ -253,17 +266,26 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         color: Colors.white,
                       ),
                       child: FlutterFlowDropDown(
-                        options: [].toList(),
+                        initialOption: dropDownValue ??= 'Experience Level',
+                        options: [
+                          '< 6 Months',
+                          '6m - 1y',
+                          '1y - 3y',
+                          '+3 years',
+                          '+5 years',
+                          '+8 years'
+                        ].toList(),
                         onChanged: (val) => setState(() => dropDownValue = val),
                         width: 130,
                         height: 40,
-                        textStyle: FlutterFlowTheme.subtitle2.override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.grayIcon,
-                        ),
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.of(context).grayIcon,
+                                ),
                         icon: FaIcon(
                           FontAwesomeIcons.chevronDown,
-                          color: FlutterFlowTheme.grayIcon400,
+                          color: FlutterFlowTheme.of(context).grayIcon400,
                           size: 16,
                         ),
                         fillColor: Colors.white,
@@ -281,7 +303,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
               Divider(
                 height: 2,
                 thickness: 1,
-                color: FlutterFlowTheme.lineColor,
+                color: FlutterFlowTheme.of(context).lineColor,
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
@@ -295,10 +317,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           controller: textController4,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            labelText: 'Company',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -320,10 +346,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.darkText,
-                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).darkText,
+                              ),
                         ),
                       ),
                     ),
@@ -333,7 +361,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
               Divider(
                 height: 2,
                 thickness: 1,
-                color: FlutterFlowTheme.lineColor,
+                color: FlutterFlowTheme.of(context).lineColor,
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 4),
@@ -343,7 +371,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   children: [
                     Text(
                       'Salary',
-                      style: FlutterFlowTheme.bodyText1,
+                      style: FlutterFlowTheme.of(context).bodyText1,
                     ),
                   ],
                 ),
@@ -356,12 +384,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   children: [
                     Text(
                       '\$40,000',
-                      style: FlutterFlowTheme.bodyText2,
+                      style: FlutterFlowTheme.of(context).bodyText2,
                     ),
                     Text(
                       '\$150,000+',
                       textAlign: TextAlign.end,
-                      style: FlutterFlowTheme.bodyText2,
+                      style: FlutterFlowTheme.of(context).bodyText2,
                     ),
                   ],
                 ),
@@ -369,7 +397,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                 child: Slider(
-                  activeColor: FlutterFlowTheme.secondaryColor,
+                  activeColor: FlutterFlowTheme.of(context).secondaryColor,
                   inactiveColor: Color(0xFF9E9E9E),
                   min: 40000,
                   max: 160000,
@@ -389,7 +417,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   children: [
                     Text(
                       'Continue as a(n)',
-                      style: FlutterFlowTheme.subtitle1,
+                      style: FlutterFlowTheme.of(context).subtitle1,
                     ),
                   ],
                 ),
@@ -402,7 +430,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   children: [
                     Text(
                       'Choose an option below to continue.',
-                      style: FlutterFlowTheme.bodyText2,
+                      style: FlutterFlowTheme.of(context).bodyText2,
                     ),
                   ],
                 ),
@@ -433,10 +461,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                       width: MediaQuery.of(context).size.width * 0.9,
                       height: 60,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.tertiaryColor,
+                        color: FlutterFlowTheme.of(context).tertiaryColor,
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                          color: FlutterFlowTheme.lineColor,
+                          color: FlutterFlowTheme.of(context).lineColor,
                           width: 2,
                         ),
                       ),
@@ -448,17 +476,20 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 12, 0),
                             child: Icon(
                               Icons.person_outline,
-                              color: FlutterFlowTheme.grayIcon,
+                              color: FlutterFlowTheme.of(context).grayIcon,
                               size: 44,
                             ),
                           ),
                           Expanded(
                             child: Text(
                               'As an Individual',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color:
+                                        FlutterFlowTheme.of(context).grayIcon,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -466,7 +497,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                                 EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
                             child: Icon(
                               Icons.chevron_right_rounded,
-                              color: FlutterFlowTheme.grayIcon400,
+                              color: FlutterFlowTheme.of(context).grayIcon400,
                               size: 24,
                             ),
                           ),
@@ -504,10 +535,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         width: MediaQuery.of(context).size.width * 0.9,
                         height: 60,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: FlutterFlowTheme.lineColor,
+                            color: FlutterFlowTheme.of(context).lineColor,
                             width: 2,
                           ),
                         ),
@@ -519,17 +550,20 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                                   EdgeInsetsDirectional.fromSTEB(12, 0, 12, 0),
                               child: Icon(
                                 Icons.group_outlined,
-                                color: FlutterFlowTheme.grayIcon,
+                                color: FlutterFlowTheme.of(context).grayIcon,
                                 size: 44,
                               ),
                             ),
                             Expanded(
                               child: Text(
                                 'As a Company',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.grayIcon,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color:
+                                          FlutterFlowTheme.of(context).grayIcon,
+                                    ),
                               ),
                             ),
                             Padding(
@@ -537,7 +571,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
                               child: Icon(
                                 Icons.chevron_right_rounded,
-                                color: FlutterFlowTheme.grayIcon400,
+                                color: FlutterFlowTheme.of(context).grayIcon400,
                                 size: 24,
                               ),
                             ),
@@ -563,7 +597,8 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomePageOLDWidget(),
+                                builder: (context) =>
+                                    NavBarPage(initialPage: 'HomePage_OLD'),
                               ),
                             );
                           },
@@ -571,11 +606,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           options: FFButtonOptions(
                             width: 130,
                             height: 50,
-                            color: FlutterFlowTheme.background,
-                            textStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            color: FlutterFlowTheme.of(context).background,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1,

@@ -35,7 +35,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -60,19 +60,19 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                 },
               );
             },
-            backgroundColor: FlutterFlowTheme.primaryColor,
+            backgroundColor: FlutterFlowTheme.of(context).primaryColor,
             icon: Icon(
               Icons.add_rounded,
-              color: FlutterFlowTheme.tertiaryColor,
+              color: FlutterFlowTheme.of(context).tertiaryColor,
               size: 24,
             ),
             elevation: 8,
             label: Text(
               'Add Job',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'Lexend Deca',
-                color: FlutterFlowTheme.tertiaryColor,
-              ),
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: 'Lexend Deca',
+                    color: FlutterFlowTheme.of(context).tertiaryColor,
+                  ),
             ),
           ),
           body: SingleChildScrollView(
@@ -90,7 +90,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                             width: MediaQuery.of(context).size.width,
                             height: 170,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.darkText,
+                              color: FlutterFlowTheme.of(context).darkText,
                             ),
                             child: Padding(
                               padding:
@@ -113,11 +113,15 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                             width: 40,
                                             height: 40,
                                             decoration: BoxDecoration(
-                                              color: FlutterFlowTheme.dark500,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .dark500,
                                               borderRadius:
                                                   BorderRadius.circular(8),
                                               border: Border.all(
-                                                color: FlutterFlowTheme.dark400,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .dark400,
                                                 width: 1,
                                               ),
                                             ),
@@ -127,8 +131,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                               buttonSize: 46,
                                               icon: Icon(
                                                 Icons.login_outlined,
-                                                color: FlutterFlowTheme
-                                                    .grayIcon400,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon400,
                                                 size: 16,
                                               ),
                                               onPressed: () async {
@@ -154,11 +159,15 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                             width: 40,
                                             height: 40,
                                             decoration: BoxDecoration(
-                                              color: FlutterFlowTheme.dark500,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .dark500,
                                               borderRadius:
                                                   BorderRadius.circular(8),
                                               border: Border.all(
-                                                color: FlutterFlowTheme.dark400,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .dark400,
                                                 width: 1,
                                               ),
                                             ),
@@ -168,8 +177,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                               buttonSize: 46,
                                               icon: Icon(
                                                 Icons.edit_outlined,
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
                                                 size: 20,
                                               ),
                                               onPressed: () async {
@@ -219,14 +229,19 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                 child: AutoSizeText(
                                                   mAINMyProfileUsersRecord
                                                       .displayName,
-                                                  style: FlutterFlowTheme
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .subtitle1
                                                       .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .tertiaryColor,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                                 ),
                                               ),
                                               Padding(
@@ -235,13 +250,17 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                 child: Text(
                                                   mAINMyProfileUsersRecord
                                                       .positionTitle,
-                                                  style: FlutterFlowTheme
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyText1
                                                       .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme
-                                                        .primaryColor,
-                                                  ),
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryColor,
+                                                      ),
                                                 ),
                                               ),
                                             ],
@@ -267,7 +286,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                     24, 12, 0, 8),
                                 child: Text(
                                   'Short Description',
-                                  style: FlutterFlowTheme.bodyText2,
+                                  style: FlutterFlowTheme.of(context).bodyText2,
                                 ),
                               ),
                             ],
@@ -281,7 +300,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                       24, 0, 24, 0),
                                   child: Text(
                                     mAINMyProfileUsersRecord.bio,
-                                    style: FlutterFlowTheme.bodyText1,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
                                   ),
                                 ),
                               ),
@@ -297,7 +317,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                 EdgeInsetsDirectional.fromSTEB(24, 12, 0, 8),
                             child: Text(
                               'Experience Level',
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                           ),
                         ],
@@ -311,7 +331,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                   EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 mAINMyProfileUsersRecord.experienceLevel,
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -325,7 +345,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                 EdgeInsetsDirectional.fromSTEB(24, 12, 0, 8),
                             child: Text(
                               'Company',
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                           ),
                         ],
@@ -339,7 +359,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                   EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 mAINMyProfileUsersRecord.currentCompany,
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -353,7 +373,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                 EdgeInsetsDirectional.fromSTEB(24, 12, 0, 8),
                             child: Text(
                               'Salary',
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                           ),
                         ],
@@ -370,7 +390,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                   mAINMyProfileUsersRecord.salary,
                                   '0.00',
                                 )}k',
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -392,7 +412,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                 width: 50,
                                 height: 50,
                                 child: SpinKitThreeBounce(
-                                  color: FlutterFlowTheme.primaryColor,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                   size: 50,
                                 ),
                               ),
@@ -419,7 +440,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                         24, 12, 0, 8),
                                     child: Text(
                                       'Company Profile',
-                                      style: FlutterFlowTheme.bodyText2,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText2,
                                     ),
                                   ),
                                 ],
@@ -444,7 +466,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                   child: Container(
                                     width: MediaQuery.of(context).size.width,
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.tertiaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 2,
@@ -454,7 +477,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                       ],
                                       borderRadius: BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: FlutterFlowTheme.lineColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .lineColor,
                                         width: 1,
                                       ),
                                     ),
@@ -481,7 +505,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                   child: Card(
                                                     clipBehavior: Clip
                                                         .antiAliasWithSaveLayer,
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .tertiaryColor,
                                                     elevation: 2,
                                                     shape:
@@ -531,8 +556,10 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                               .companyName,
                                                           'No Company',
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                            .subtitle1,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle1,
                                                       ),
                                                       Padding(
                                                         padding:
@@ -559,7 +586,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                                         .companySize,
                                                                     '0 People',
                                                                   ),
-                                                                  style: FlutterFlowTheme
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
                                                                       .bodyText2,
                                                                 ),
                                                               ),
@@ -593,7 +621,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 8),
                       child: Text(
                         'Work Experience',
-                        style: FlutterFlowTheme.bodyText2,
+                        style: FlutterFlowTheme.of(context).bodyText2,
                       ),
                     ),
                   ],
@@ -615,7 +643,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                             width: 50,
                             height: 50,
                             child: SpinKitThreeBounce(
-                              color: FlutterFlowTheme.primaryColor,
+                              color: FlutterFlowTheme.of(context).primaryColor,
                               size: 50,
                             ),
                           ),
@@ -654,7 +682,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                       width: 50,
                                       height: 50,
                                       child: SpinKitThreeBounce(
-                                        color: FlutterFlowTheme.primaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
                                         size: 50,
                                       ),
                                     ),
@@ -666,7 +695,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                   width: MediaQuery.of(context).size.width,
                                   height: 70,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.tertiaryColor,
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
                                     boxShadow: [
                                       BoxShadow(
                                         blurRadius: 2,
@@ -676,7 +706,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                     ],
                                     borderRadius: BorderRadius.circular(8),
                                     border: Border.all(
-                                      color: FlutterFlowTheme.lineColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .lineColor,
                                       width: 1,
                                     ),
                                   ),
@@ -698,8 +729,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                               child: Card(
                                                 clipBehavior:
                                                     Clip.antiAliasWithSaveLayer,
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
                                                 elevation: 2,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
@@ -737,7 +769,8 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                   Text(
                                                     listViewWorkHistoryRecord
                                                         .jobTitle,
-                                                    style: FlutterFlowTheme
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .subtitle1,
                                                   ),
                                                   Padding(
@@ -751,8 +784,10 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                             .companyName,
                                                         'ACME CO.',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText2,
                                                     ),
                                                   ),
                                                   Row(
@@ -764,18 +799,21 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                             'yMMMd',
                                                             listViewWorkHistoryRecord
                                                                 .startDate),
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              FlutterFlowTheme
-                                                                  .grayIcon400,
-                                                          fontSize: 10,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .grayIcon400,
+                                                                  fontSize: 10,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                ),
                                                       ),
                                                       Text(
                                                         ' - ${valueOrDefault<String>(
@@ -785,18 +823,21 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                                   .endDate),
                                                           'Present',
                                                         )}',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              FlutterFlowTheme
-                                                                  .grayIcon400,
-                                                          fontSize: 10,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .grayIcon400,
+                                                                  fontSize: 10,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                ),
                                                       ),
                                                     ],
                                                   ),
@@ -824,8 +865,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                               buttonSize: 46,
                                               icon: Icon(
                                                 Icons.edit_outlined,
-                                                color: FlutterFlowTheme
-                                                    .grayIcon400,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon400,
                                                 size: 24,
                                               ),
                                               onPressed: () async {

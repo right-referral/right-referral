@@ -28,22 +28,22 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.tertiaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
         automaticallyImplyLeading: false,
         leading: Icon(
           Icons.chevron_left_rounded,
-          color: FlutterFlowTheme.darkText,
+          color: FlutterFlowTheme.of(context).darkText,
           size: 32,
         ),
         title: Text(
           'Forgot Password',
-          style: FlutterFlowTheme.subtitle1,
+          style: FlutterFlowTheme.of(context).subtitle1,
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -53,41 +53,43 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               controller: emailAddressController,
               obscureText: false,
               decoration: InputDecoration(
-                labelStyle: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: FlutterFlowTheme.grayIcon400,
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
-                hintStyle: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0x98FFFFFF),
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
+                labelText: 'Your Email',
+                labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: FlutterFlowTheme.of(context).grayIcon400,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
+                hintText: 'Please enter a valid email...',
+                hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: Color(0x98FFFFFF),
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: FlutterFlowTheme.lineColor,
+                    color: FlutterFlowTheme.of(context).lineColor,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: FlutterFlowTheme.lineColor,
+                    color: FlutterFlowTheme.of(context).lineColor,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 filled: true,
-                fillColor: FlutterFlowTheme.tertiaryColor,
+                fillColor: FlutterFlowTheme.of(context).tertiaryColor,
               ),
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'Lexend Deca',
-                color: FlutterFlowTheme.darkText,
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-              ),
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: 'Lexend Deca',
+                    color: FlutterFlowTheme.of(context).darkText,
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                  ),
               keyboardType: TextInputType.emailAddress,
             ),
           ),
@@ -99,7 +101,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 Expanded(
                   child: Text(
                     'We will send you an email with a link to reset your password, please enter the email associated with your account above.',
-                    style: FlutterFlowTheme.bodyText2,
+                    style: FlutterFlowTheme.of(context).bodyText2,
                   ),
                 ),
               ],
@@ -128,13 +130,13 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               options: FFButtonOptions(
                 width: 230,
                 height: 50,
-                color: FlutterFlowTheme.primaryColor,
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Lexend Deca',
-                  color: FlutterFlowTheme.tertiaryColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
+                color: FlutterFlowTheme.of(context).primaryColor,
+                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                      fontFamily: 'Lexend Deca',
+                      color: FlutterFlowTheme.of(context).tertiaryColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
                 elevation: 3,
                 borderSide: BorderSide(
                   color: Colors.transparent,

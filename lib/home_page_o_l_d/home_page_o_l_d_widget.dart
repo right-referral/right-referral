@@ -35,17 +35,17 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.background,
+        backgroundColor: FlutterFlowTheme.of(context).background,
         automaticallyImplyLeading: false,
         title: Text(
           'Welcome',
-          style: FlutterFlowTheme.title2,
+          style: FlutterFlowTheme.of(context).title2,
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await Navigator.push(
@@ -58,7 +58,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
             ),
           );
         },
-        backgroundColor: FlutterFlowTheme.secondaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryColor,
         elevation: 8,
         child: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -66,7 +66,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
           buttonSize: 48,
           icon: Icon(
             Icons.add_rounded,
-            color: FlutterFlowTheme.tertiaryColor,
+            color: FlutterFlowTheme.of(context).tertiaryColor,
             size: 30,
           ),
           onPressed: () async {
@@ -89,7 +89,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
             width: MediaQuery.of(context).size.width,
             height: 24,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.background,
+              color: FlutterFlowTheme.of(context).background,
             ),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -98,10 +98,10 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                   child: Text(
                     'Featured Jobs',
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: FlutterFlowTheme.grayIcon,
-                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: FlutterFlowTheme.of(context).grayIcon,
+                        ),
                   ),
                 ),
               ],
@@ -131,7 +131,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
                               image: DecorationImage(
                                 fit: BoxFit.fill,
                                 image: Image.asset(
@@ -156,7 +156,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
-                                        FlutterFlowTheme.darkText,
+                                        FlutterFlowTheme.of(context).darkText,
                                         Color(0x000C141D)
                                       ],
                                       stops: [0, 1],
@@ -183,8 +183,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                           child: Card(
                                             clipBehavior:
                                                 Clip.antiAliasWithSaveLayer,
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             elevation: 2,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -220,13 +220,17 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                               children: [
                                                 Text(
                                                   'Job Title',
-                                                  style: FlutterFlowTheme
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .subtitle1
                                                       .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                  ),
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .tertiaryColor,
+                                                      ),
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -239,28 +243,34 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                                   0, 0, 4, 0),
                                                       child: Text(
                                                         '[Company Name]',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xB3FFFFFF),
-                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  color: Color(
+                                                                      0xB3FFFFFF),
+                                                                ),
                                                       ),
                                                     ),
                                                     Text(
                                                       '\$50k-\$60k',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -280,8 +290,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                           },
                                           child: Icon(
                                             Icons.chevron_right_rounded,
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             size: 24,
                                           ),
                                         ),
@@ -299,7 +309,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
                               image: DecorationImage(
                                 fit: BoxFit.fill,
                                 image: Image.asset(
@@ -324,7 +334,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
-                                        FlutterFlowTheme.darkText,
+                                        FlutterFlowTheme.of(context).darkText,
                                         Color(0x000C141D)
                                       ],
                                       stops: [0, 1],
@@ -351,8 +361,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                           child: Card(
                                             clipBehavior:
                                                 Clip.antiAliasWithSaveLayer,
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             elevation: 2,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -388,13 +398,17 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                               children: [
                                                 Text(
                                                   'Job Title',
-                                                  style: FlutterFlowTheme
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .subtitle1
                                                       .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                  ),
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .tertiaryColor,
+                                                      ),
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -407,28 +421,34 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                                   0, 0, 4, 0),
                                                       child: Text(
                                                         '[Company Name]',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xB3FFFFFF),
-                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  color: Color(
+                                                                      0xB3FFFFFF),
+                                                                ),
                                                       ),
                                                     ),
                                                     Text(
                                                       '\$50k-\$60k',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -438,7 +458,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                         ),
                                         Icon(
                                           Icons.chevron_right_rounded,
-                                          color: FlutterFlowTheme.tertiaryColor,
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
                                           size: 24,
                                         ),
                                       ],
@@ -455,7 +476,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
                               image: DecorationImage(
                                 fit: BoxFit.fill,
                                 image: Image.asset(
@@ -480,7 +501,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
-                                        FlutterFlowTheme.darkText,
+                                        FlutterFlowTheme.of(context).darkText,
                                         Color(0x000C141D)
                                       ],
                                       stops: [0, 1],
@@ -507,8 +528,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                           child: Card(
                                             clipBehavior:
                                                 Clip.antiAliasWithSaveLayer,
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             elevation: 2,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -544,13 +565,17 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                               children: [
                                                 Text(
                                                   'Job Title',
-                                                  style: FlutterFlowTheme
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .subtitle1
                                                       .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                  ),
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .tertiaryColor,
+                                                      ),
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -563,28 +588,34 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                                   0, 0, 4, 0),
                                                       child: Text(
                                                         '[Company Name]',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xB3FFFFFF),
-                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  color: Color(
+                                                                      0xB3FFFFFF),
+                                                                ),
                                                       ),
                                                     ),
                                                     Text(
                                                       '\$50k-\$60k',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -594,7 +625,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                         ),
                                         Icon(
                                           Icons.chevron_right_rounded,
-                                          color: FlutterFlowTheme.tertiaryColor,
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
                                           size: 24,
                                         ),
                                       ],
@@ -631,7 +663,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                           dotWidth: 16,
                           dotHeight: 4,
                           dotColor: Color(0xFFABB3BA),
-                          activeDotColor: FlutterFlowTheme.grayIcon,
+                          activeDotColor: FlutterFlowTheme.of(context).grayIcon,
                           paintStyle: PaintingStyle.fill,
                         ),
                       ),
@@ -648,11 +680,11 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                 width: MediaQuery.of(context).size.width,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.tertiaryColor,
+                  color: FlutterFlowTheme.of(context).tertiaryColor,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 0,
-                      color: FlutterFlowTheme.lineColor,
+                      color: FlutterFlowTheme.of(context).lineColor,
                       offset: Offset(0, 1),
                     )
                   ],
@@ -661,6 +693,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                   controller: textController,
                   obscureText: false,
                   decoration: InputDecoration(
+                    labelText: 'Search Jobs',
+                    hintText: 'Search jobs here...',
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
@@ -684,14 +718,14 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                     contentPadding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                     prefixIcon: Icon(
                       Icons.search_rounded,
-                      color: FlutterFlowTheme.grayIcon,
+                      color: FlutterFlowTheme.of(context).grayIcon,
                       size: 24,
                     ),
                   ),
-                  style: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Lexend Deca',
-                    color: FlutterFlowTheme.grayIcon,
-                  ),
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: FlutterFlowTheme.of(context).grayIcon,
+                      ),
                 ),
               ),
             ],
@@ -712,7 +746,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                         width: 50,
                         height: 50,
                         child: SpinKitThreeBounce(
-                          color: FlutterFlowTheme.primaryColor,
+                          color: FlutterFlowTheme.of(context).primaryColor,
                           size: 50,
                         ),
                       ),
@@ -753,7 +787,7 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                           child: Container(
                             width: 100,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
                               boxShadow: [
                                 BoxShadow(
                                   blurRadius: 3,
@@ -780,7 +814,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                         child: Card(
                                           clipBehavior:
                                               Clip.antiAliasWithSaveLayer,
-                                          color: FlutterFlowTheme.tertiaryColor,
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
                                           elevation: 2,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -822,7 +857,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                               Text(
                                                 listViewJobPostsRecord.jobName,
                                                 style:
-                                                    FlutterFlowTheme.subtitle1,
+                                                    FlutterFlowTheme.of(context)
+                                                        .subtitle1,
                                               ),
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -835,21 +871,26 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                     child: Text(
                                                       listViewJobPostsRecord
                                                           .jobCompany,
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText2,
                                                     ),
                                                   ),
                                                   Text(
                                                     '\$${listViewJobPostsRecord.salary}k',
-                                                    style: FlutterFlowTheme
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText1
                                                         .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: FlutterFlowTheme
-                                                          .primaryColor,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
+                                                          fontFamily:
+                                                              'Lexend Deca',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
                                                   ),
                                                 ],
                                               ),
@@ -864,8 +905,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                           width: 36,
                                           height: 36,
                                           decoration: BoxDecoration(
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             shape: BoxShape.circle,
                                             border: Border.all(
                                               color: Color(0xFFDADADA),
@@ -889,13 +930,15 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                             onIcon: Icon(
                                               Icons.favorite_rounded,
                                               color:
-                                                  FlutterFlowTheme.primaryColor,
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
                                               size: 16,
                                             ),
                                             offIcon: Icon(
                                               Icons.favorite_border_rounded,
                                               color:
-                                                  FlutterFlowTheme.grayIcon400,
+                                                  FlutterFlowTheme.of(context)
+                                                      .grayIcon400,
                                               size: 16,
                                             ),
                                           ),
@@ -903,7 +946,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                       ),
                                       Icon(
                                         Icons.chevron_right_rounded,
-                                        color: FlutterFlowTheme.grayIcon400,
+                                        color: FlutterFlowTheme.of(context)
+                                            .grayIcon400,
                                         size: 24,
                                       ),
                                     ],
@@ -919,7 +963,8 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                         child: AutoSizeText(
                                           listViewJobPostsRecord.jobDescription,
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.bodyText2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText2,
                                         ),
                                       ),
                                     ),
@@ -934,11 +979,14 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                       child: AutoSizeText(
                                         'Posted On:',
                                         textAlign: TextAlign.start,
-                                        style:
-                                            FlutterFlowTheme.bodyText2.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: FlutterFlowTheme.grayIcon400,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText2
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .grayIcon400,
+                                            ),
                                       ),
                                     ),
                                     Padding(
@@ -948,11 +996,14 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                         dateTimeFormat('relative',
                                             listViewJobPostsRecord.timeCreated),
                                         textAlign: TextAlign.start,
-                                        style:
-                                            FlutterFlowTheme.bodyText2.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: FlutterFlowTheme.grayIcon,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText2
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .grayIcon,
+                                            ),
                                       ),
                                     ),
                                   ],

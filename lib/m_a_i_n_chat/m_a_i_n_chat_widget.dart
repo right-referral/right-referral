@@ -23,20 +23,20 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.darkText,
+        backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
           'Messages',
-          style: FlutterFlowTheme.title3.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.tertiaryColor,
-          ),
+          style: FlutterFlowTheme.of(context).title3.override(
+                fontFamily: 'Lexend Deca',
+                color: FlutterFlowTheme.of(context).tertiaryColor,
+              ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 1,
       ),
-      backgroundColor: FlutterFlowTheme.background,
+      backgroundColor: FlutterFlowTheme.of(context).background,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
@@ -54,7 +54,7 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                     width: 50,
                     height: 50,
                     child: SpinKitThreeBounce(
-                      color: FlutterFlowTheme.primaryColor,
+                      color: FlutterFlowTheme.of(context).primaryColor,
                       size: 50,
                     ),
                   ),
@@ -86,7 +86,7 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                             width: 50,
                             height: 50,
                             child: SpinKitThreeBounce(
-                              color: FlutterFlowTheme.primaryColor,
+                              color: FlutterFlowTheme.of(context).primaryColor,
                               size: 50,
                             ),
                           ),
@@ -123,8 +123,9 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                                 .contains(currentUserReference),
                             title: chatInfo.chatPreviewTitle(),
                             userProfilePic: chatInfo.chatPreviewPic(),
-                            color: FlutterFlowTheme.tertiaryColor,
-                            unreadColor: FlutterFlowTheme.secondaryColor,
+                            color: FlutterFlowTheme.of(context).tertiaryColor,
+                            unreadColor:
+                                FlutterFlowTheme.of(context).secondaryColor,
                             titleTextStyle: GoogleFonts.getFont(
                               'Lexend Deca',
                               color: Colors.black,
@@ -133,13 +134,13 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                             ),
                             dateTextStyle: GoogleFonts.getFont(
                               'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
+                              color: FlutterFlowTheme.of(context).grayIcon400,
                               fontWeight: FontWeight.normal,
                               fontSize: 14,
                             ),
                             previewTextStyle: GoogleFonts.getFont(
                               'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon,
+                              color: FlutterFlowTheme.of(context).grayIcon,
                               fontWeight: FontWeight.normal,
                               fontSize: 14,
                             ),

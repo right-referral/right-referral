@@ -43,7 +43,7 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 1,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.tertiaryColor,
+        color: FlutterFlowTheme.of(context).tertiaryColor,
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
@@ -61,17 +61,17 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
               child: Text(
                 'Work Experience',
-                style: FlutterFlowTheme.title2.override(
-                  fontFamily: 'Lexend Deca',
-                  fontWeight: FontWeight.w600,
-                ),
+                style: FlutterFlowTheme.of(context).title2.override(
+                      fontFamily: 'Lexend Deca',
+                      fontWeight: FontWeight.w600,
+                    ),
               ),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
               child: Text(
                 'Add Credentials below.',
-                style: FlutterFlowTheme.bodyText2,
+                style: FlutterFlowTheme.of(context).bodyText2,
               ),
             ),
             Padding(
@@ -86,10 +86,13 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                       controller: postitionTitleController,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelStyle: FlutterFlowTheme.title3.override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.grayIcon400,
-                        ),
+                        labelText: 'Position Title',
+                        labelStyle: FlutterFlowTheme.of(context)
+                            .title3
+                            .override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).grayIcon400,
+                            ),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
@@ -111,11 +114,11 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                           ),
                         ),
                       ),
-                      style: FlutterFlowTheme.title3.override(
-                        fontFamily: 'Lexend Deca',
-                        color: FlutterFlowTheme.darkText,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: FlutterFlowTheme.of(context).title3.override(
+                            fontFamily: 'Lexend Deca',
+                            color: FlutterFlowTheme.of(context).darkText,
+                            fontWeight: FontWeight.w600,
+                          ),
                     ),
                   ),
                   Padding(
@@ -124,10 +127,13 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                       controller: companyController,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelStyle: FlutterFlowTheme.subtitle2.override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.grayIcon400,
-                        ),
+                        labelText: 'Company',
+                        labelStyle: FlutterFlowTheme.of(context)
+                            .subtitle2
+                            .override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).grayIcon400,
+                            ),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
@@ -149,16 +155,16 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                           ),
                         ),
                       ),
-                      style: FlutterFlowTheme.subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: FlutterFlowTheme.darkText,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: FlutterFlowTheme.of(context).subtitle2.override(
+                            fontFamily: 'Lexend Deca',
+                            color: FlutterFlowTheme.of(context).darkText,
+                            fontWeight: FontWeight.w600,
+                          ),
                     ),
                   ),
                   Divider(
                     thickness: 1,
-                    color: FlutterFlowTheme.lineColor,
+                    color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
@@ -177,6 +183,7 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                   setState(() => datePicked1 = date);
                                 },
                                 currentTime: getCurrentTimestamp,
+                                minTime: DateTime(0, 0, 0),
                               );
                             },
                             child: Container(
@@ -187,11 +194,12 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                     MediaQuery.of(context).size.width * 0.4,
                               ),
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.tertiaryColor,
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
                                 borderRadius: BorderRadius.circular(8),
                                 shape: BoxShape.rectangle,
                                 border: Border.all(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 2,
                                 ),
                               ),
@@ -212,11 +220,14 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                       children: [
                                         Text(
                                           'Start Date',
-                                          style: FlutterFlowTheme.bodyText1
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: FlutterFlowTheme.grayIcon400,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon400,
+                                              ),
                                         ),
                                         Padding(
                                           padding:
@@ -225,7 +236,8 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                           child: Text(
                                             dateTimeFormat(
                                                 'yMMMd', datePicked1),
-                                            style: FlutterFlowTheme.bodyText1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                           ),
                                         ),
                                       ],
@@ -235,7 +247,8 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                           0, 0, 16, 0),
                                       child: Icon(
                                         Icons.calendar_today_outlined,
-                                        color: FlutterFlowTheme.grayIcon400,
+                                        color: FlutterFlowTheme.of(context)
+                                            .grayIcon400,
                                         size: 24,
                                       ),
                                     ),
@@ -254,6 +267,7 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                 setState(() => datePicked2 = date);
                               },
                               currentTime: getCurrentTimestamp,
+                              minTime: DateTime(0, 0, 0),
                             );
                           },
                           child: Container(
@@ -263,7 +277,7 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                               maxWidth: MediaQuery.of(context).size.width * 0.4,
                             ),
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(
                                 color: Color(0xFFDADADA),
@@ -286,18 +300,22 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                     children: [
                                       Text(
                                         'End Date',
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: FlutterFlowTheme.grayIcon400,
-                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .grayIcon400,
+                                            ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             3, 0, 0, 0),
                                         child: Text(
                                           dateTimeFormat('yMMMd', datePicked2),
-                                          style: FlutterFlowTheme.bodyText1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
                                         ),
                                       ),
                                     ],
@@ -307,7 +325,8 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                         0, 0, 16, 0),
                                     child: Icon(
                                       Icons.calendar_today_outlined,
-                                      color: FlutterFlowTheme.grayIcon400,
+                                      color: FlutterFlowTheme.of(context)
+                                          .grayIcon400,
                                       size: 24,
                                     ),
                                   ),
@@ -329,10 +348,14 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                             controller: textController3,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelStyle: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
+                              labelText: 'What did you do here?',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -354,10 +377,12 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                 ),
                               ),
                             ),
-                            style: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.darkText,
-                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.of(context).darkText,
+                                ),
                             maxLines: 4,
                             keyboardType: TextInputType.multiline,
                           ),
@@ -367,7 +392,7 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                   ),
                   Divider(
                     thickness: 1,
-                    color: FlutterFlowTheme.lineColor,
+                    color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -396,11 +421,12 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                           options: FFButtonOptions(
                             width: 270,
                             height: 50,
-                            color: FlutterFlowTheme.darkText,
-                            textStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                            ),
+                            color: FlutterFlowTheme.of(context).darkText,
+                            textStyle:
+                                FlutterFlowTheme.of(context).subtitle2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                    ),
                             elevation: 2,
                             borderSide: BorderSide(
                               color: Colors.transparent,

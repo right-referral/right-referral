@@ -37,7 +37,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -130,7 +130,8 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                                     buttonSize: 46,
                                     icon: Icon(
                                       Icons.chevron_left_rounded,
-                                      color: FlutterFlowTheme.tertiaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
                                       size: 24,
                                     ),
                                     onPressed: () async {
@@ -159,7 +160,8 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                                         buttonSize: 46,
                                         icon: Icon(
                                           Icons.reply_rounded,
-                                          color: FlutterFlowTheme.tertiaryColor,
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
                                           size: 16,
                                         ),
                                         onPressed: () async {
@@ -185,7 +187,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                           Expanded(
                             child: Text(
                               jobPostAppliedJobPostsRecord.jobName,
-                              style: FlutterFlowTheme.title3,
+                              style: FlutterFlowTheme.of(context).title3,
                             ),
                           ),
                         ],
@@ -198,17 +200,20 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                         children: [
                           Text(
                             jobPostAppliedJobPostsRecord.jobCompany,
-                            style: FlutterFlowTheme.bodyText2,
+                            style: FlutterFlowTheme.of(context).bodyText2,
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                             child: Text(
                               '\$${jobPostAppliedJobPostsRecord.salary}k',
-                              style: FlutterFlowTheme.bodyText2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.primaryColor,
-                                fontWeight: FontWeight.w600,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                             ),
                           ),
                         ],
@@ -221,10 +226,11 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                         children: [
                           Text(
                             'Description',
-                            style: FlutterFlowTheme.bodyText2.override(
-                              fontFamily: 'Lexend Deca',
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontWeight: FontWeight.bold,
+                                    ),
                           ),
                         ],
                       ),
@@ -237,7 +243,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                           Expanded(
                             child: Text(
                               jobPostAppliedJobPostsRecord.jobDescription,
-                              style: FlutterFlowTheme.bodyText1,
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
                           ),
                         ],
@@ -250,10 +256,11 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                         children: [
                           Text(
                             'Requirements',
-                            style: FlutterFlowTheme.bodyText2.override(
-                              fontFamily: 'Lexend Deca',
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontWeight: FontWeight.bold,
+                                    ),
                           ),
                         ],
                       ),
@@ -266,7 +273,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                           Expanded(
                             child: Text(
                               jobPostAppliedJobPostsRecord.jobRequirements,
-                              style: FlutterFlowTheme.bodyText1,
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
                           ),
                         ],
@@ -279,10 +286,11 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                         children: [
                           Text(
                             'Preferred Skills & Expertise',
-                            style: FlutterFlowTheme.bodyText2.override(
-                              fontFamily: 'Lexend Deca',
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontWeight: FontWeight.bold,
+                                    ),
                           ),
                         ],
                       ),
@@ -295,7 +303,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                           Expanded(
                             child: Text(
                               jobPostAppliedJobPostsRecord.jobPreferredSkills,
-                              style: FlutterFlowTheme.bodyText1,
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
                           ),
                         ],
@@ -306,7 +314,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.lineColor,
+                    color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
@@ -318,10 +326,12 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                           children: [
                             Text(
                               'Your proposal',
-                              style: FlutterFlowTheme.bodyText2.override(
-                                fontFamily: 'Lexend Deca',
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                           ],
                         ),
@@ -333,7 +343,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                               Expanded(
                                 child: Text(
                                   widget.application.coverLetter,
-                                  style: FlutterFlowTheme.bodyText1,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                               ),
                             ],
@@ -344,10 +354,12 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                           children: [
                             Text(
                               'Submitted',
-                              style: FlutterFlowTheme.bodyText2.override(
-                                fontFamily: 'Lexend Deca',
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                           ],
                         ),
@@ -359,7 +371,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                               Text(
                                 dateTimeFormat(
                                     'relative', widget.application.appliedTime),
-                                style: FlutterFlowTheme.title3,
+                                style: FlutterFlowTheme.of(context).title3,
                               ),
                             ],
                           ),

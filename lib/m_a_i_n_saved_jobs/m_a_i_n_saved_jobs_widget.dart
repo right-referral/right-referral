@@ -25,20 +25,20 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.darkText,
+        backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
           'My Jobs',
-          style: FlutterFlowTheme.title2.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.tertiaryColor,
-          ),
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Lexend Deca',
+                color: FlutterFlowTheme.of(context).tertiaryColor,
+              ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.darkText,
+      backgroundColor: FlutterFlowTheme.of(context).darkText,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await Navigator.push(
@@ -51,7 +51,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
             ),
           );
         },
-        backgroundColor: FlutterFlowTheme.secondaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryColor,
         elevation: 8,
         child: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -59,7 +59,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
           buttonSize: 48,
           icon: Icon(
             Icons.add_rounded,
-            color: FlutterFlowTheme.tertiaryColor,
+            color: FlutterFlowTheme.of(context).tertiaryColor,
             size: 30,
           ),
           onPressed: () async {
@@ -85,15 +85,19 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
               child: Column(
                 children: [
                   TabBar(
-                    labelColor: FlutterFlowTheme.secondaryColor,
-                    unselectedLabelColor: FlutterFlowTheme.grayIcon,
+                    labelColor: FlutterFlowTheme.of(context).secondaryColor,
+                    unselectedLabelColor: FlutterFlowTheme.of(context).grayIcon,
                     labelStyle: GoogleFonts.getFont(
                       'Roboto',
                     ),
-                    indicatorColor: FlutterFlowTheme.secondaryColor,
+                    indicatorColor: FlutterFlowTheme.of(context).secondaryColor,
                     tabs: [
-                      Tab(),
-                      Tab(),
+                      Tab(
+                        text: 'Applied',
+                      ),
+                      Tab(
+                        text: 'Posted',
+                      ),
                     ],
                   ),
                   Expanded(
@@ -103,7 +107,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.background,
+                            color: FlutterFlowTheme.of(context).background,
                           ),
                           child: StreamBuilder<List<AppliedJobsRecord>>(
                             stream: queryAppliedJobsRecord(
@@ -121,7 +125,8 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                     width: 50,
                                     height: 50,
                                     child: SpinKitThreeBounce(
-                                      color: FlutterFlowTheme.primaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
                                       size: 50,
                                     ),
                                   ),
@@ -159,8 +164,9 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                               width: 50,
                                               height: 50,
                                               child: SpinKitThreeBounce(
-                                                color: FlutterFlowTheme
-                                                    .primaryColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryColor,
                                                 size: 50,
                                               ),
                                             ),
@@ -171,8 +177,8 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                         return Container(
                                           width: 100,
                                           decoration: BoxDecoration(
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 3,
@@ -222,6 +228,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                           clipBehavior: Clip
                                                               .antiAliasWithSaveLayer,
                                                           color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .tertiaryColor,
                                                           elevation: 2,
                                                           shape:
@@ -281,7 +288,8 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                               Text(
                                                                 jobPostCardJobPostsRecord
                                                                     .jobName,
-                                                                style: FlutterFlowTheme
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
                                                                     .subtitle1,
                                                               ),
                                                               Row(
@@ -299,7 +307,8 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                     child: Text(
                                                                       jobPostCardJobPostsRecord
                                                                           .jobCompany,
-                                                                      style: FlutterFlowTheme
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
                                                                           .bodyText2,
                                                                     ),
                                                                   ),
@@ -309,17 +318,17 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                       '\$${jobPostCardJobPostsRecord.salary}k',
                                                                       'k',
                                                                     ),
-                                                                    style: FlutterFlowTheme
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
                                                                         .bodyText1
                                                                         .override(
-                                                                      fontFamily:
-                                                                          'Lexend Deca',
-                                                                      color: FlutterFlowTheme
-                                                                          .primaryColor,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                    ),
+                                                                          fontFamily:
+                                                                              'Lexend Deca',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryColor,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                        ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -330,8 +339,10 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                       Icon(
                                                         Icons
                                                             .chevron_right_rounded,
-                                                        color: FlutterFlowTheme
-                                                            .grayIcon400,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .grayIcon400,
                                                         size: 24,
                                                       ),
                                                     ],
@@ -353,7 +364,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.background,
+                            color: FlutterFlowTheme.of(context).background,
                           ),
                           child: StreamBuilder<List<JobPostsRecord>>(
                             stream: queryJobPostsRecord(
@@ -370,7 +381,8 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                     width: 50,
                                     height: 50,
                                     child: SpinKitThreeBounce(
-                                      color: FlutterFlowTheme.primaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
                                       size: 50,
                                     ),
                                   ),
@@ -414,7 +426,8 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                         width:
                                             MediaQuery.of(context).size.width,
                                         decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.tertiaryColor,
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
                                           boxShadow: [
                                             BoxShadow(
                                               blurRadius: 3,
@@ -446,8 +459,10 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                     child: Card(
                                                       clipBehavior: Clip
                                                           .antiAliasWithSaveLayer,
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .tertiaryColor,
                                                       elevation: 2,
                                                       shape:
                                                           RoundedRectangleBorder(
@@ -493,9 +508,9 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                           Text(
                                                             listViewJobPostsRecord
                                                                 .jobName,
-                                                            style:
-                                                                FlutterFlowTheme
-                                                                    .subtitle1,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .subtitle1,
                                                           ),
                                                           Row(
                                                             mainAxisSize:
@@ -517,23 +532,26 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                         .jobCompany,
                                                                     'Kaleo Design',
                                                                   ),
-                                                                  style: FlutterFlowTheme
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
                                                                       .bodyText2,
                                                                 ),
                                                               ),
                                                               Text(
                                                                 '\$${listViewJobPostsRecord.salary}k',
-                                                                style: FlutterFlowTheme
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
                                                                     .bodyText1
                                                                     .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
-                                                                  color: FlutterFlowTheme
-                                                                      .primaryColor,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
+                                                                      fontFamily:
+                                                                          'Lexend Deca',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryColor,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                    ),
                                                               ),
                                                             ],
                                                           ),
@@ -543,7 +561,8 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                   ),
                                                   Icon(
                                                     Icons.chevron_right_rounded,
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .grayIcon400,
                                                     size: 24,
                                                   ),
@@ -566,8 +585,10 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                         maxChars: 120,
                                                         replacement: '…',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText2,
                                                     ),
                                                   ),
                                                 ),

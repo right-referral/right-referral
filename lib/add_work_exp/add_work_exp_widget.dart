@@ -32,7 +32,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -58,16 +58,16 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
             title: Text(
               'Work History',
               textAlign: TextAlign.start,
-              style: FlutterFlowTheme.subtitle1.override(
-                fontFamily: 'Lexend Deca',
-                fontWeight: FontWeight.bold,
-              ),
+              style: FlutterFlowTheme.of(context).subtitle1.override(
+                    fontFamily: 'Lexend Deca',
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             actions: [],
             centerTitle: false,
             elevation: 0,
           ),
-          backgroundColor: FlutterFlowTheme.tertiaryColor,
+          backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
           body: SafeArea(
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
@@ -93,7 +93,8 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                 width: 50,
                                 height: 50,
                                 child: SpinKitThreeBounce(
-                                  color: FlutterFlowTheme.primaryColor,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                   size: 50,
                                 ),
                               ),
@@ -137,7 +138,8 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                 },
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  color: FlutterFlowTheme.tertiaryColor,
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
                                   elevation: 2,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8),
@@ -175,7 +177,8 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                   buttonSize: 48,
                                                   icon: Icon(
                                                     Icons.work_outline_rounded,
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .grayIcon400,
                                                     size: 30,
                                                   ),
@@ -204,14 +207,17 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                       child: Text(
                                                         listViewWorkHistoryRecord
                                                             .jobTitle,
-                                                        style: FlutterFlowTheme
-                                                            .subtitle1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
                                                       ),
                                                     ),
                                                     Row(
@@ -221,17 +227,17 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                         Text(
                                                           listViewWorkHistoryRecord
                                                               .companyName,
-                                                          style:
-                                                              FlutterFlowTheme
-                                                                  .subtitle2
-                                                                  .override(
-                                                            fontFamily:
-                                                                'Lexend Deca',
-                                                            color:
-                                                                FlutterFlowTheme
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .subtitle2
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
                                                                     .primaryColor,
-                                                            fontSize: 14,
-                                                          ),
+                                                                fontSize: 14,
+                                                              ),
                                                         ),
                                                       ],
                                                     ),
@@ -244,9 +250,9 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                               'yMMMd',
                                                               listViewWorkHistoryRecord
                                                                   .startDate),
-                                                          style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText2,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText2,
                                                         ),
                                                         Padding(
                                                           padding:
@@ -258,9 +264,9 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                                 'yMMMd',
                                                                 listViewWorkHistoryRecord
                                                                     .endDate),
-                                                            style:
-                                                                FlutterFlowTheme
-                                                                    .bodyText2,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText2,
                                                           ),
                                                         ),
                                                       ],
@@ -277,7 +283,8 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                             icon: Icon(
                                               Icons.edit_outlined,
                                               color:
-                                                  FlutterFlowTheme.grayIcon400,
+                                                  FlutterFlowTheme.of(context)
+                                                      .grayIcon400,
                                               size: 26,
                                             ),
                                             onPressed: () {
@@ -325,7 +332,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                           width: MediaQuery.of(context).size.width * 0.9,
                           height: 75,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.background,
+                            color: FlutterFlowTheme.of(context).background,
                           ),
                           child: Padding(
                             padding:
@@ -341,18 +348,21 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                   children: [
                                     Text(
                                       'Job Title',
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.grayIcon400,
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .grayIcon400,
+                                          ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 4, 0, 0),
                                       child: Text(
                                         'Add Work Experience',
-                                        style: FlutterFlowTheme.subtitle1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .subtitle1,
                                       ),
                                     ),
                                   ],
@@ -373,7 +383,8 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                   },
                                   child: Icon(
                                     Icons.arrow_forward_ios,
-                                    color: FlutterFlowTheme.grayIcon400,
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
                                     size: 24,
                                   ),
                                 ),
@@ -404,11 +415,12 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                           options: FFButtonOptions(
                             width: 130,
                             height: 50,
-                            color: FlutterFlowTheme.primaryColor,
-                            textStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: Colors.white,
-                            ),
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                            textStyle:
+                                FlutterFlowTheme.of(context).subtitle2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                    ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1,

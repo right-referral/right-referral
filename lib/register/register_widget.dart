@@ -62,11 +62,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/images/uiLogo_robinColored.png',
-                          width: 170,
-                          height: 70,
-                          fit: BoxFit.fitWidth,
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+                          child: Image.asset(
+                            'assets/images/rr_logo.png',
+                            width: 170,
+                            height: 70,
+                            fit: BoxFit.fitWidth,
+                          ),
                         ),
                       ],
                     ),
@@ -75,7 +78,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     width: MediaQuery.of(context).size.width,
                     height: 370,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.tertiaryColor,
+                      color: FlutterFlowTheme.of(context).tertiaryColor,
                       boxShadow: [
                         BoxShadow(
                           blurRadius: 8,
@@ -101,24 +104,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  'Get Started!',
-                                  style: FlutterFlowTheme.title1,
-                                ),
-                              ),
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Color(0xFFDBE2E7),
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.call_rounded,
-                                  color: Color(0xFF090F13),
-                                  size: 24,
+                                  'Easy Signup for endless possibilities',
+                                  style: FlutterFlowTheme.of(context)
+                                      .title1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        fontSize: 20,
+                                      ),
                                 ),
                               ),
                             ],
@@ -136,16 +128,20 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   controller: emailAddressController,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF95A1AC),
-                                    ),
-                                    hintStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF95A1AC),
-                                    ),
+                                    labelText: 'Your Email',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xFF95A1AC),
+                                        ),
+                                    hintText: 'Enter your email here...',
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xFF95A1AC),
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xFFDBE2E7),
@@ -161,15 +157,18 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     filled: true,
-                                    fillColor: FlutterFlowTheme.tertiaryColor,
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
                                     contentPadding:
                                         EdgeInsetsDirectional.fromSTEB(
                                             16, 24, 0, 24),
                                   ),
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF2B343A),
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0xFF2B343A),
+                                      ),
                                 ),
                               ),
                             ],
@@ -187,16 +186,20 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   controller: passwordController,
                                   obscureText: !passwordVisibility,
                                   decoration: InputDecoration(
-                                    labelStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF95A1AC),
-                                    ),
-                                    hintStyle:
-                                        FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF95A1AC),
-                                    ),
+                                    labelText: 'Create Password',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xFF95A1AC),
+                                        ),
+                                    hintText: 'Enter your password here...',
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: Color(0xFF95A1AC),
+                                        ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0xFFDBE2E7),
@@ -212,7 +215,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     filled: true,
-                                    fillColor: FlutterFlowTheme.tertiaryColor,
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
                                     contentPadding:
                                         EdgeInsetsDirectional.fromSTEB(
                                             16, 24, 0, 24),
@@ -230,10 +234,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF2B343A),
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Color(0xFF2B343A),
+                                      ),
                                 ),
                               ),
                             ],
@@ -269,14 +275,16 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 options: FFButtonOptions(
                                   width: 200,
                                   height: 50,
-                                  color: FlutterFlowTheme.primaryColor,
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1,
@@ -319,13 +327,16 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 options: FFButtonOptions(
                                   width: 160,
                                   height: 40,
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.primaryColor,
-                                    fontSize: 14,
-                                  ),
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                        fontSize: 14,
+                                      ),
                                   elevation: 0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
@@ -351,13 +362,16 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 options: FFButtonOptions(
                                   width: 130,
                                   height: 40,
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.secondaryColor,
-                                    fontSize: 14,
-                                  ),
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryColor,
+                                        fontSize: 14,
+                                      ),
                                   elevation: 0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,

@@ -56,7 +56,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.darkText,
+        backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -65,7 +65,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.tertiaryColor,
+            color: FlutterFlowTheme.of(context).tertiaryColor,
             size: 24,
           ),
           onPressed: () async {
@@ -74,16 +74,16 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
         ),
         title: Text(
           widget.chatUser.displayName,
-          style: FlutterFlowTheme.subtitle2.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.tertiaryColor,
-          ),
+          style: FlutterFlowTheme.of(context).subtitle2.override(
+                fontFamily: 'Lexend Deca',
+                color: FlutterFlowTheme.of(context).tertiaryColor,
+              ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 1,
       ),
-      backgroundColor: FlutterFlowTheme.background,
+      backgroundColor: FlutterFlowTheme.of(context).background,
       body: SafeArea(
         child: StreamBuilder<FFChatInfo>(
           stream: FFChatManager.instance.getChatInfo(
@@ -104,7 +104,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   otherUsersBoxDecoration: BoxDecoration(
-                    color: FlutterFlowTheme.primaryColor,
+                    color: FlutterFlowTheme.of(context).primaryColor,
                     border: Border.all(
                       color: Colors.transparent,
                     ),
@@ -141,12 +141,12 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
                     ),
                   ),
                 )
-              : const Center(
+              : Center(
                   child: SizedBox(
                     width: 50,
                     height: 50,
                     child: SpinKitThreeBounce(
-                      color: FlutterFlowTheme.primaryColor,
+                      color: FlutterFlowTheme.of(context).primaryColor,
                       size: 50,
                     ),
                   ),

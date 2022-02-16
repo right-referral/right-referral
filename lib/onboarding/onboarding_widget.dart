@@ -22,7 +22,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.dark400,
+      backgroundColor: FlutterFlowTheme.of(context).dark400,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -73,7 +73,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.dark400,
+                              color: FlutterFlowTheme.of(context).dark400,
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -89,7 +89,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           MediaQuery.of(context).size.height *
                                               0.5,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.tertiaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                       ),
                                       child: Image.asset(
                                         'assets/images/jobs_Creatives@2x.png',
@@ -110,13 +111,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         child: Text(
                                           'Search for Jobs',
                                           textAlign: TextAlign.center,
-                                          style:
-                                              FlutterFlowTheme.title1.override(
-                                            fontFamily: 'Lexend Deca',
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
-                                            fontSize: 32,
-                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
+                                                fontSize: 32,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -132,11 +135,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         child: Text(
                                           'Search and find jobs in your industry for companies that are ready to hire the top talent!',
                                           textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0x99FFFFFF),
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -149,7 +153,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.dark400,
+                              color: FlutterFlowTheme.of(context).dark400,
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -165,7 +169,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           MediaQuery.of(context).size.height *
                                               0.5,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.tertiaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                       ),
                                       child: Image.asset(
                                         'assets/images/jobs_AdminUsers@2x.png',
@@ -186,13 +191,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         child: Text(
                                           'Post Jobs Easily',
                                           textAlign: TextAlign.center,
-                                          style:
-                                              FlutterFlowTheme.title1.override(
-                                            fontFamily: 'Lexend Deca',
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
-                                            fontSize: 32,
-                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
+                                                fontSize: 32,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -208,11 +215,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         child: Text(
                                           'Post jobs for your company easily and find the best talent looking for new opportunities immediately.',
                                           textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0x99FFFFFF),
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -225,7 +233,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.dark400,
+                              color: FlutterFlowTheme.of(context).dark400,
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -241,7 +249,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           MediaQuery.of(context).size.height *
                                               0.5,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.tertiaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                       ),
                                       child: Image.asset(
                                         'assets/images/jobs_TeamBuilding@2x.png',
@@ -262,13 +271,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         child: Text(
                                           'Find the Right Fit',
                                           textAlign: TextAlign.center,
-                                          style:
-                                              FlutterFlowTheme.title1.override(
-                                            fontFamily: 'Lexend Deca',
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
-                                            fontSize: 32,
-                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
+                                                fontSize: 32,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -284,11 +295,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                         child: Text(
                                           'Search and find jobs in your industry for companies that are ready to hire the top talent!',
                                           textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.subtitle2
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0x99FFFFFF),
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -322,7 +334,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                               dotWidth: 16,
                               dotHeight: 4,
                               dotColor: Color(0xFFC6CAD4),
-                              activeDotColor: FlutterFlowTheme.tertiaryColor,
+                              activeDotColor:
+                                  FlutterFlowTheme.of(context).tertiaryColor,
                               paintStyle: PaintingStyle.fill,
                             ),
                           ),
@@ -356,11 +369,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     options: FFButtonOptions(
                       width: 170,
                       height: 50,
-                      color: FlutterFlowTheme.darkText,
-                      textStyle: FlutterFlowTheme.subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
+                      color: FlutterFlowTheme.of(context).darkText,
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.white,
+                              ),
                       elevation: 2,
                       borderSide: BorderSide(
                         color: Colors.transparent,

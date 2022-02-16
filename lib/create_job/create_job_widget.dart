@@ -46,7 +46,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -63,11 +63,11 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       children: [
                         Text(
                           'Post a Job',
-                          style: FlutterFlowTheme.title3,
+                          style: FlutterFlowTheme.of(context).title3,
                         ),
                         Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
-                          color: FlutterFlowTheme.background,
+                          color: FlutterFlowTheme.of(context).background,
                           elevation: 2,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
@@ -78,7 +78,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             buttonSize: 46,
                             icon: Icon(
                               Icons.close_rounded,
-                              color: FlutterFlowTheme.grayIcon400,
+                              color: FlutterFlowTheme.of(context).grayIcon400,
                               size: 24,
                             ),
                             onPressed: () async {
@@ -103,7 +103,8 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               width: 50,
                               height: 50,
                               child: SpinKitThreeBounce(
-                                color: FlutterFlowTheme.primaryColor,
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
                                 size: 50,
                               ),
                             ),
@@ -125,7 +126,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                           children: [
                             Card(
                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.lineColor,
+                              color: FlutterFlowTheme.of(context).lineColor,
                               elevation: 2,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
@@ -161,6 +162,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                       controller: textController1,
                                       obscureText: false,
                                       decoration: InputDecoration(
+                                        labelText: 'Company Name...',
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
@@ -182,7 +184,8 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                           ),
                                         ),
                                       ),
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],
@@ -196,7 +199,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                   Divider(
                     height: 4,
                     thickness: 1,
-                    color: FlutterFlowTheme.lineColor,
+                    color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -208,13 +211,16 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: textController2,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelStyle: FlutterFlowTheme.title3.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
+                              labelText: 'Position Title',
+                              labelStyle:
+                                  FlutterFlowTheme.of(context).title3.override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .grayIcon400,
+                                      ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -224,7 +230,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -233,10 +239,10 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                 ),
                               ),
                             ),
-                            style: FlutterFlowTheme.title3.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.darkText,
-                            ),
+                            style: FlutterFlowTheme.of(context).title3.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.of(context).darkText,
+                                ),
                           ),
                         ),
                       ),
@@ -252,13 +258,17 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: shortDescriptionController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
+                              labelText: 'Short Description',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -268,7 +278,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -277,7 +287,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                 ),
                               ),
                             ),
-                            style: FlutterFlowTheme.bodyText1,
+                            style: FlutterFlowTheme.of(context).bodyText1,
                             textAlign: TextAlign.start,
                             maxLines: 3,
                             keyboardType: TextInputType.multiline,
@@ -296,17 +306,26 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: requirementsController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
+                              labelText: 'Requirements',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
+                              hintText:
+                                  'Have to have x many years of experience, education, etc...',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -316,7 +335,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -325,7 +344,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                 ),
                               ),
                             ),
-                            style: FlutterFlowTheme.bodyText1,
+                            style: FlutterFlowTheme.of(context).bodyText1,
                             textAlign: TextAlign.start,
                             maxLines: 3,
                             keyboardType: TextInputType.multiline,
@@ -344,17 +363,25 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: preferredSkillsController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
-                              hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
+                              labelText: 'Preferred Skills & Experiences',
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
+                              hintText: 'Knowledge of software or processes...',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -364,7 +391,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.lineColor,
+                                  color: FlutterFlowTheme.of(context).lineColor,
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -373,7 +400,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                 ),
                               ),
                             ),
-                            style: FlutterFlowTheme.bodyText1,
+                            style: FlutterFlowTheme.of(context).bodyText1,
                             textAlign: TextAlign.start,
                             maxLines: 3,
                             keyboardType: TextInputType.multiline,
@@ -395,24 +422,33 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                color: FlutterFlowTheme.lineColor,
+                                color: FlutterFlowTheme.of(context).lineColor,
                                 offset: Offset(0, 1),
                               )
                             ],
                           ),
                           child: FlutterFlowDropDown(
-                            options: [].toList(),
+                            options: [
+                              '< 6 Months',
+                              '6m - 1y',
+                              '1y - 3y',
+                              '+3 years',
+                              '+5 years',
+                              '+8 years'
+                            ].toList(),
                             onChanged: (val) =>
                                 setState(() => experienceLevelValue = val),
                             width: MediaQuery.of(context).size.width,
                             height: 40,
-                            textStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.darkText,
-                            ),
+                            textStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.of(context).darkText,
+                                ),
                             icon: FaIcon(
                               FontAwesomeIcons.chevronDown,
-                              color: FlutterFlowTheme.grayIcon400,
+                              color: FlutterFlowTheme.of(context).grayIcon400,
                               size: 16,
                             ),
                             fillColor: Colors.white,
@@ -435,7 +471,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       children: [
                         Text(
                           'Salary',
-                          style: FlutterFlowTheme.bodyText1,
+                          style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ],
                     ),
@@ -448,12 +484,12 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       children: [
                         Text(
                           '\$40,000',
-                          style: FlutterFlowTheme.bodyText2,
+                          style: FlutterFlowTheme.of(context).bodyText2,
                         ),
                         Text(
                           '\$150,000+',
                           textAlign: TextAlign.end,
-                          style: FlutterFlowTheme.bodyText2,
+                          style: FlutterFlowTheme.of(context).bodyText2,
                         ),
                       ],
                     ),
@@ -461,7 +497,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                     child: Slider(
-                      activeColor: FlutterFlowTheme.secondaryColor,
+                      activeColor: FlutterFlowTheme.of(context).secondaryColor,
                       inactiveColor: Color(0xFF9E9E9E),
                       min: 40000,
                       max: 160000,
@@ -486,7 +522,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                color: FlutterFlowTheme.lineColor,
+                                color: FlutterFlowTheme.of(context).lineColor,
                                 offset: Offset(0, 1),
                               )
                             ],
@@ -500,17 +536,20 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             defaultText: 'Location',
                             icon: Icon(
                               Icons.place,
-                              color: FlutterFlowTheme.grayIcon400,
+                              color: FlutterFlowTheme.of(context).grayIcon400,
                               size: 16,
                             ),
                             buttonOptions: FFButtonOptions(
                               width: 200,
                               height: 40,
-                              color: FlutterFlowTheme.tertiaryColor,
-                              textStyle: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1,
@@ -532,7 +571,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
               width: MediaQuery.of(context).size.width,
               height: 100,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 3,
@@ -566,12 +605,12 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                   options: FFButtonOptions(
                     width: 130,
                     height: 40,
-                    color: FlutterFlowTheme.primaryColor,
-                    textStyle: FlutterFlowTheme.subtitle1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: FlutterFlowTheme.tertiaryColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    color: FlutterFlowTheme.of(context).primaryColor,
+                    textStyle: FlutterFlowTheme.of(context).subtitle1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                     elevation: 0,
                     borderSide: BorderSide(
                       color: Colors.transparent,

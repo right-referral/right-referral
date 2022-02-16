@@ -31,7 +31,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.darkText,
+        backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -40,7 +40,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.tertiaryColor,
+            color: FlutterFlowTheme.of(context).tertiaryColor,
             size: 30,
           ),
           onPressed: () async {
@@ -51,7 +51,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -61,7 +61,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
               width: double.infinity,
               height: 60,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.darkText,
+                color: FlutterFlowTheme.of(context).darkText,
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 3,
@@ -80,10 +80,13 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                         controller: textController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelStyle: FlutterFlowTheme.subtitle1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.grayIcon400,
-                          ),
+                          labelText: 'Search jobs...',
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .subtitle1
+                              .override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).grayIcon400,
+                              ),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -107,10 +110,10 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                           contentPadding:
                               EdgeInsetsDirectional.fromSTEB(16, 12, 12, 8),
                         ),
-                        style: FlutterFlowTheme.subtitle1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.tertiaryColor,
-                        ),
+                        style: FlutterFlowTheme.of(context).subtitle1.override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
+                            ),
                       ),
                     ),
                   ),
@@ -121,7 +124,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                     buttonSize: 60,
                     icon: Icon(
                       Icons.search_sharp,
-                      color: FlutterFlowTheme.tertiaryColor,
+                      color: FlutterFlowTheme.of(context).tertiaryColor,
                       size: 30,
                     ),
                     onPressed: () async {
@@ -151,7 +154,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                       width: 50,
                       height: 50,
                       child: SpinKitThreeBounce(
-                        color: FlutterFlowTheme.primaryColor,
+                        color: FlutterFlowTheme.of(context).primaryColor,
                         size: 50,
                       ),
                     ),
@@ -186,7 +189,8 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                 width: 50,
                                 height: 50,
                                 child: SpinKitThreeBounce(
-                                  color: FlutterFlowTheme.primaryColor,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                   size: 50,
                                 ),
                               ),
@@ -209,7 +213,8 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                             child: Container(
                               width: 100,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.tertiaryColor,
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
                                     blurRadius: 3,
@@ -237,8 +242,8 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                           child: Card(
                                             clipBehavior:
                                                 Clip.antiAliasWithSaveLayer,
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             elevation: 2,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -279,7 +284,8 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                                 Text(
                                                   jobPostCardJobPostsRecord
                                                       .jobName,
-                                                  style: FlutterFlowTheme
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .subtitle1,
                                                 ),
                                                 Row(
@@ -294,22 +300,28 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                                       child: Text(
                                                         jobPostCardJobPostsRecord
                                                             .jobCompany,
-                                                        style: FlutterFlowTheme
-                                                            .bodyText2,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText2,
                                                       ),
                                                     ),
                                                     Text(
                                                       '\$${listViewJobPostsRecord.salary}k',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -319,7 +331,8 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                         ),
                                         Icon(
                                           Icons.chevron_right_rounded,
-                                          color: FlutterFlowTheme.grayIcon400,
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon400,
                                           size: 24,
                                         ),
                                       ],
@@ -341,7 +354,8 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                               replacement: '…',
                                             ),
                                             textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.bodyText2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText2,
                                           ),
                                         ),
                                       ),
@@ -356,11 +370,14 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                         child: AutoSizeText(
                                           'Posted On:',
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.bodyText2
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: FlutterFlowTheme.grayIcon400,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon400,
+                                              ),
                                         ),
                                       ),
                                       Padding(
@@ -372,11 +389,14 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                               jobPostCardJobPostsRecord
                                                   .timeCreated),
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.bodyText2
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: FlutterFlowTheme.grayIcon,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon,
+                                              ),
                                         ),
                                       ),
                                     ],

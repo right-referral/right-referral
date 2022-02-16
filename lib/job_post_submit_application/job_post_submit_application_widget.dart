@@ -52,7 +52,7 @@ class _JobPostSubmitApplicationWidgetState
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -156,8 +156,9 @@ class _JobPostSubmitApplicationWidgetState
                                             buttonSize: 46,
                                             icon: Icon(
                                               Icons.chevron_left_rounded,
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
                                               size: 24,
                                             ),
                                             onPressed: () async {
@@ -186,7 +187,8 @@ class _JobPostSubmitApplicationWidgetState
                                                 buttonSize: 46,
                                                 icon: Icon(
                                                   Icons.reply_rounded,
-                                                  color: FlutterFlowTheme
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .tertiaryColor,
                                                   size: 16,
                                                 ),
@@ -218,7 +220,8 @@ class _JobPostSubmitApplicationWidgetState
                                     child: Text(
                                       jobPostSubmitApplicationJobPostsRecord
                                           .jobName,
-                                      style: FlutterFlowTheme.title3,
+                                      style:
+                                          FlutterFlowTheme.of(context).title3,
                                     ),
                                   ),
                                 ],
@@ -233,19 +236,22 @@ class _JobPostSubmitApplicationWidgetState
                                   Text(
                                     jobPostSubmitApplicationJobPostsRecord
                                         .jobCompany,
-                                    style: FlutterFlowTheme.bodyText2,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText2,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8, 0, 0, 0),
                                     child: Text(
                                       '\$${jobPostSubmitApplicationJobPostsRecord.salary}k',
-                                      style:
-                                          FlutterFlowTheme.bodyText2.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.primaryColor,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText2
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -256,7 +262,7 @@ class _JobPostSubmitApplicationWidgetState
                               thickness: 2,
                               indent: 16,
                               endIndent: 16,
-                              color: FlutterFlowTheme.lineColor,
+                              color: FlutterFlowTheme.of(context).lineColor,
                             ),
                             Padding(
                               padding:
@@ -266,10 +272,12 @@ class _JobPostSubmitApplicationWidgetState
                                 children: [
                                   Text(
                                     'Submit your prosoal below',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -285,11 +293,15 @@ class _JobPostSubmitApplicationWidgetState
                                       controller: textController,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintStyle:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: FlutterFlowTheme.grayIcon,
-                                        ),
+                                        hintText: 'Start typing here....',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .grayIcon,
+                                            ),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
@@ -311,7 +323,8 @@ class _JobPostSubmitApplicationWidgetState
                                           ),
                                         ),
                                       ),
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                       textAlign: TextAlign.start,
                                       maxLines: 12,
                                     ),
@@ -327,10 +340,12 @@ class _JobPostSubmitApplicationWidgetState
                                 children: [
                                   Text(
                                     'Add Attachments',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -350,9 +365,10 @@ class _JobPostSubmitApplicationWidgetState
                                         context: context,
                                         allowPhoto: true,
                                         backgroundColor:
-                                            FlutterFlowTheme.dark500,
-                                        textColor:
-                                            FlutterFlowTheme.tertiaryColor,
+                                            FlutterFlowTheme.of(context)
+                                                .dark500,
+                                        textColor: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                         pickerFontFamily: 'Lexend Deca',
                                       );
                                       if (selectedMedia != null &&
@@ -389,7 +405,8 @@ class _JobPostSubmitApplicationWidgetState
                                       width: 75,
                                       height: 75,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.background,
+                                        color: FlutterFlowTheme.of(context)
+                                            .background,
                                         image: DecorationImage(
                                           fit: BoxFit.cover,
                                           image: Image.asset(
@@ -416,9 +433,10 @@ class _JobPostSubmitApplicationWidgetState
                                         context: context,
                                         allowPhoto: true,
                                         backgroundColor:
-                                            FlutterFlowTheme.dark500,
-                                        textColor:
-                                            FlutterFlowTheme.tertiaryColor,
+                                            FlutterFlowTheme.of(context)
+                                                .dark500,
+                                        textColor: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                         pickerFontFamily: 'Lexend Deca',
                                       );
                                       if (selectedMedia != null &&
@@ -455,7 +473,8 @@ class _JobPostSubmitApplicationWidgetState
                                       width: 75,
                                       height: 75,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.background,
+                                        color: FlutterFlowTheme.of(context)
+                                            .background,
                                         image: DecorationImage(
                                           fit: BoxFit.cover,
                                           image: Image.asset(
@@ -482,9 +501,10 @@ class _JobPostSubmitApplicationWidgetState
                                         context: context,
                                         allowPhoto: true,
                                         backgroundColor:
-                                            FlutterFlowTheme.dark500,
-                                        textColor:
-                                            FlutterFlowTheme.tertiaryColor,
+                                            FlutterFlowTheme.of(context)
+                                                .dark500,
+                                        textColor: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
                                         pickerFontFamily: 'Lexend Deca',
                                       );
                                       if (selectedMedia != null &&
@@ -521,7 +541,8 @@ class _JobPostSubmitApplicationWidgetState
                                       width: 75,
                                       height: 75,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.background,
+                                        color: FlutterFlowTheme.of(context)
+                                            .background,
                                         image: DecorationImage(
                                           fit: BoxFit.cover,
                                           image: Image.asset(
@@ -554,7 +575,7 @@ class _JobPostSubmitApplicationWidgetState
                         width: MediaQuery.of(context).size.width,
                         height: 100,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.secondaryColor,
+                          color: FlutterFlowTheme.of(context).secondaryColor,
                         ),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 36),
@@ -570,7 +591,8 @@ class _JobPostSubmitApplicationWidgetState
                                     width: 50,
                                     height: 50,
                                     child: SpinKitThreeBounce(
-                                      color: FlutterFlowTheme.primaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
                                       size: 50,
                                     ),
                                   ),
@@ -603,13 +625,16 @@ class _JobPostSubmitApplicationWidgetState
                                 options: FFButtonOptions(
                                   width: 130,
                                   height: 40,
-                                  color: FlutterFlowTheme.secondaryColor,
-                                  textStyle:
-                                      FlutterFlowTheme.subtitle1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.tertiaryColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryColor,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                   elevation: 0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,

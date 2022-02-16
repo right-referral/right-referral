@@ -36,16 +36,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  void initState() {
-    super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
-    textController5 = TextEditingController();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return StreamBuilder<UsersRecord>(
       stream: UsersRecord.getDocument(currentUserReference),
@@ -57,7 +47,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -81,7 +71,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
             ),
             title: Text(
               'Edit Profile',
-              style: FlutterFlowTheme.subtitle1,
+              style: FlutterFlowTheme.of(context).subtitle1,
             ),
             actions: [],
             centerTitle: false,
@@ -107,7 +97,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               width: 75,
                               height: 75,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.background,
+                                color: FlutterFlowTheme.of(context).background,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: InkWell(
@@ -162,14 +152,20 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                 child: TextFormField(
-                                  controller: textController1,
+                                  controller: textController1 ??=
+                                      TextEditingController(
+                                    text: editProfileUsersRecord.displayName,
+                                  ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelStyle:
-                                        FlutterFlowTheme.subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.grayIcon400,
-                                    ),
+                                    labelText: 'Full Name',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon400,
+                                        ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -191,7 +187,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.subtitle1,
+                                  style: FlutterFlowTheme.of(context).subtitle1,
                                 ),
                               ),
                             ),
@@ -201,7 +197,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       Divider(
                         height: 2,
                         thickness: 1,
-                        color: FlutterFlowTheme.lineColor,
+                        color: FlutterFlowTheme.of(context).lineColor,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -213,17 +209,24 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                 child: TextFormField(
-                                  controller: textController2,
+                                  controller: textController2 ??=
+                                      TextEditingController(
+                                    text: editProfileUsersRecord.positionTitle,
+                                  ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelStyle:
-                                        FlutterFlowTheme.subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.grayIcon400,
-                                    ),
+                                    labelText: 'Postition Title',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon400,
+                                        ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: FlutterFlowTheme.lineColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .lineColor,
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -233,7 +236,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: FlutterFlowTheme.lineColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .lineColor,
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -242,7 +246,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.subtitle1,
+                                  style: FlutterFlowTheme.of(context).subtitle1,
                                 ),
                               ),
                             ),
@@ -259,17 +263,24 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                 child: TextFormField(
-                                  controller: textController3,
+                                  controller: textController3 ??=
+                                      TextEditingController(
+                                    text: editProfileUsersRecord.email,
+                                  ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelStyle:
-                                        FlutterFlowTheme.subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.grayIcon400,
-                                    ),
+                                    labelText: 'Email',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon400,
+                                        ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: FlutterFlowTheme.lineColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .lineColor,
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -279,7 +290,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     ),
                                     focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: FlutterFlowTheme.lineColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .lineColor,
                                         width: 1,
                                       ),
                                       borderRadius: const BorderRadius.only(
@@ -288,10 +300,13 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.darkText,
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .darkText,
+                                      ),
                                 ),
                               ),
                             ),
@@ -308,14 +323,20 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                 child: TextFormField(
-                                  controller: textController4,
+                                  controller: textController4 ??=
+                                      TextEditingController(
+                                    text: editProfileUsersRecord.bio,
+                                  ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelStyle:
-                                        FlutterFlowTheme.subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.grayIcon400,
-                                    ),
+                                    labelText: 'Short Description',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon400,
+                                        ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -337,10 +358,13 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.darkText,
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .darkText,
+                                      ),
                                   textAlign: TextAlign.start,
                                   maxLines: 4,
                                   keyboardType: TextInputType.multiline,
@@ -353,7 +377,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       Divider(
                         height: 2,
                         thickness: 1,
-                        color: FlutterFlowTheme.lineColor,
+                        color: FlutterFlowTheme.of(context).lineColor,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
@@ -366,7 +390,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                               child: Text(
                                 'Experience Level',
-                                style: FlutterFlowTheme.bodyText2,
+                                style: FlutterFlowTheme.of(context).bodyText2,
                               ),
                             ),
                             Padding(
@@ -384,19 +408,32 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       color: Colors.white,
                                     ),
                                     child: FlutterFlowDropDown(
-                                      options: [].toList(),
+                                      initialOption: dropDownValue ??=
+                                          editProfileUsersRecord
+                                              .experienceLevel,
+                                      options: [
+                                        '< 6 Months',
+                                        '6m - 1y',
+                                        '1y - 3y',
+                                        '+3 years',
+                                        '+5 years',
+                                        '+8 years'
+                                      ].toList(),
                                       onChanged: (val) =>
                                           setState(() => dropDownValue = val),
                                       width: 130,
                                       height: 40,
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle2.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.grayIcon,
-                                      ),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .subtitle2
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .grayIcon,
+                                          ),
                                       icon: FaIcon(
                                         FontAwesomeIcons.chevronDown,
-                                        color: FlutterFlowTheme.grayIcon400,
+                                        color: FlutterFlowTheme.of(context)
+                                            .grayIcon400,
                                         size: 16,
                                       ),
                                       fillColor: Colors.white,
@@ -418,7 +455,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       Divider(
                         height: 2,
                         thickness: 1,
-                        color: FlutterFlowTheme.lineColor,
+                        color: FlutterFlowTheme.of(context).lineColor,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
@@ -430,14 +467,20 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                 child: TextFormField(
-                                  controller: textController5,
+                                  controller: textController5 ??=
+                                      TextEditingController(
+                                    text: editProfileUsersRecord.currentCompany,
+                                  ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelStyle:
-                                        FlutterFlowTheme.subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.grayIcon,
-                                    ),
+                                    labelText: 'Company',
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon,
+                                        ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -459,10 +502,13 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       ),
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.darkText,
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .darkText,
+                                      ),
                                 ),
                               ),
                             ),
@@ -472,7 +518,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       Divider(
                         height: 2,
                         thickness: 1,
-                        color: FlutterFlowTheme.lineColor,
+                        color: FlutterFlowTheme.of(context).lineColor,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
@@ -481,7 +527,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           children: [
                             Text(
                               'Salary',
-                              style: FlutterFlowTheme.bodyText1,
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
                           ],
                         ),
@@ -494,12 +540,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           children: [
                             Text(
                               '\$40,000',
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                             Text(
                               '\$150,000+',
                               textAlign: TextAlign.end,
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                           ],
                         ),
@@ -507,7 +553,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                         child: Slider(
-                          activeColor: FlutterFlowTheme.secondaryColor,
+                          activeColor:
+                              FlutterFlowTheme.of(context).secondaryColor,
                           inactiveColor: Color(0xFF9E9E9E),
                           min: 40000,
                           max: 160000,
@@ -533,19 +580,19 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       width: MediaQuery.of(context).size.width,
                       height: 100,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.primaryColor,
+                        color: FlutterFlowTheme.of(context).primaryColor,
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 36),
                         child: FFButtonWidget(
                           onPressed: () async {
                             final usersUpdateData = createUsersRecordData(
-                              displayName: textController1.text,
-                              email: textController3.text,
-                              positionTitle: textController2.text,
+                              displayName: textController1?.text ?? '',
+                              email: textController3?.text ?? '',
+                              positionTitle: textController2?.text ?? '',
                               experienceLevel: dropDownValue,
-                              currentCompany: textController5.text,
-                              bio: textController4.text,
+                              currentCompany: textController5?.text ?? '',
+                              bio: textController4?.text ?? '',
                               photoUrl: uploadedFileUrl,
                               salary: salaryRangeValue.toString(),
                             );
@@ -557,12 +604,14 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           options: FFButtonOptions(
                             width: 130,
                             height: 40,
-                            color: FlutterFlowTheme.primaryColor,
-                            textStyle: FlutterFlowTheme.subtitle1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.tertiaryColor,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                            textStyle:
+                                FlutterFlowTheme.of(context).subtitle1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                             elevation: 0,
                             borderSide: BorderSide(
                               color: Colors.transparent,

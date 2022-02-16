@@ -42,7 +42,7 @@ class _JobPostDetailsActualWidgetState
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -146,8 +146,9 @@ class _JobPostDetailsActualWidgetState
                                             buttonSize: 46,
                                             icon: Icon(
                                               Icons.chevron_left_rounded,
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
                                               size: 24,
                                             ),
                                             onPressed: () async {
@@ -181,7 +182,8 @@ class _JobPostDetailsActualWidgetState
                                                   buttonSize: 46,
                                                   icon: Icon(
                                                     Icons.reply_rounded,
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .tertiaryColor,
                                                     size: 16,
                                                   ),
@@ -226,13 +228,15 @@ class _JobPostDetailsActualWidgetState
                                                         .likedPost,
                                                 onIcon: Icon(
                                                   Icons.favorite_rounded,
-                                                  color: FlutterFlowTheme
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .primaryColor,
                                                   size: 16,
                                                 ),
                                                 offIcon: Icon(
                                                   Icons.favorite_border_rounded,
-                                                  color: FlutterFlowTheme
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .tertiaryColor,
                                                   size: 16,
                                                 ),
@@ -256,7 +260,8 @@ class _JobPostDetailsActualWidgetState
                                     child: Text(
                                       jobPostDetailsActualJobPostsRecord
                                           .jobName,
-                                      style: FlutterFlowTheme.title3,
+                                      style:
+                                          FlutterFlowTheme.of(context).title3,
                                     ),
                                   ),
                                 ],
@@ -271,19 +276,22 @@ class _JobPostDetailsActualWidgetState
                                   Text(
                                     jobPostDetailsActualJobPostsRecord
                                         .jobCompany,
-                                    style: FlutterFlowTheme.bodyText2,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText2,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8, 0, 0, 0),
                                     child: Text(
                                       '\$${jobPostDetailsActualJobPostsRecord.salary}k',
-                                      style:
-                                          FlutterFlowTheme.bodyText2.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.primaryColor,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText2
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -297,10 +305,12 @@ class _JobPostDetailsActualWidgetState
                                 children: [
                                   Text(
                                     'Description',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -315,7 +325,8 @@ class _JobPostDetailsActualWidgetState
                                     child: Text(
                                       jobPostDetailsActualJobPostsRecord
                                           .jobDescription,
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],
@@ -329,10 +340,12 @@ class _JobPostDetailsActualWidgetState
                                 children: [
                                   Text(
                                     'Requirements',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -347,7 +360,8 @@ class _JobPostDetailsActualWidgetState
                                     child: Text(
                                       jobPostDetailsActualJobPostsRecord
                                           .jobRequirements,
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],
@@ -361,10 +375,12 @@ class _JobPostDetailsActualWidgetState
                                 children: [
                                   Text(
                                     'Preferred Skills & Expertise',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -379,7 +395,8 @@ class _JobPostDetailsActualWidgetState
                                     child: Text(
                                       jobPostDetailsActualJobPostsRecord
                                           .jobPreferredSkills,
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],
@@ -396,7 +413,7 @@ class _JobPostDetailsActualWidgetState
                           width: MediaQuery.of(context).size.width,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.primaryColor,
+                            color: FlutterFlowTheme.of(context).primaryColor,
                           ),
                           child: Padding(
                             padding:
@@ -412,7 +429,8 @@ class _JobPostDetailsActualWidgetState
                                       width: 50,
                                       height: 50,
                                       child: SpinKitThreeBounce(
-                                        color: FlutterFlowTheme.primaryColor,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
                                         size: 50,
                                       ),
                                     ),
@@ -437,13 +455,16 @@ class _JobPostDetailsActualWidgetState
                                   options: FFButtonOptions(
                                     width: 130,
                                     height: 40,
-                                    color: FlutterFlowTheme.primaryColor,
-                                    textStyle:
-                                        FlutterFlowTheme.subtitle1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.tertiaryColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .subtitle1
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                     elevation: 0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,

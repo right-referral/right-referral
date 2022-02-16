@@ -25,14 +25,14 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.darkText,
+        backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
           'Welcome',
-          style: FlutterFlowTheme.title2.override(
-            fontFamily: 'Lexend Deca',
-            color: FlutterFlowTheme.tertiaryColor,
-          ),
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Lexend Deca',
+                color: FlutterFlowTheme.of(context).tertiaryColor,
+              ),
         ),
         actions: [
           FlutterFlowIconButton(
@@ -42,7 +42,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
             buttonSize: 60,
             icon: Icon(
               Icons.search_outlined,
-              color: FlutterFlowTheme.tertiaryColor,
+              color: FlutterFlowTheme.of(context).tertiaryColor,
               size: 30,
             ),
             onPressed: () async {
@@ -58,7 +58,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await Navigator.push(
@@ -71,7 +71,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
             ),
           );
         },
-        backgroundColor: FlutterFlowTheme.secondaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryColor,
         elevation: 8,
         child: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -80,7 +80,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
           buttonSize: 48,
           icon: Icon(
             Icons.add_rounded,
-            color: FlutterFlowTheme.tertiaryColor,
+            color: FlutterFlowTheme.of(context).tertiaryColor,
             size: 30,
           ),
           onPressed: () async {
@@ -113,7 +113,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                       width: 50,
                       height: 50,
                       child: SpinKitThreeBounce(
-                        color: FlutterFlowTheme.primaryColor,
+                        color: FlutterFlowTheme.of(context).primaryColor,
                         size: 50,
                       ),
                     ),
@@ -148,7 +148,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                 width: 50,
                                 height: 50,
                                 child: SpinKitThreeBounce(
-                                  color: FlutterFlowTheme.primaryColor,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                   size: 50,
                                 ),
                               ),
@@ -171,7 +172,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                             child: Container(
                               width: 100,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.tertiaryColor,
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
                                 boxShadow: [
                                   BoxShadow(
                                     blurRadius: 3,
@@ -199,8 +201,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                           child: Card(
                                             clipBehavior:
                                                 Clip.antiAliasWithSaveLayer,
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             elevation: 2,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
@@ -241,7 +243,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                                 Text(
                                                   jobPostCardJobPostsRecord
                                                       .jobName,
-                                                  style: FlutterFlowTheme
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .subtitle1,
                                                 ),
                                                 Row(
@@ -256,22 +259,28 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                                       child: Text(
                                                         jobPostCardJobPostsRecord
                                                             .jobCompany,
-                                                        style: FlutterFlowTheme
-                                                            .bodyText2,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText2,
                                                       ),
                                                     ),
                                                     Text(
                                                       '\$${jobPostCardJobPostsRecord.salary}k',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -281,7 +290,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                         ),
                                         Icon(
                                           Icons.chevron_right_rounded,
-                                          color: FlutterFlowTheme.grayIcon400,
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon400,
                                           size: 24,
                                         ),
                                       ],
@@ -303,7 +313,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                               replacement: '…',
                                             ),
                                             textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.bodyText2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText2,
                                           ),
                                         ),
                                       ),
@@ -318,11 +329,14 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                         child: AutoSizeText(
                                           'Posted On:',
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.bodyText2
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: FlutterFlowTheme.grayIcon400,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon400,
+                                              ),
                                         ),
                                       ),
                                       Padding(
@@ -334,11 +348,14 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                               jobPostCardJobPostsRecord
                                                   .timeCreated),
                                           textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.bodyText2
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText2
                                               .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: FlutterFlowTheme.grayIcon,
-                                          ),
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon,
+                                              ),
                                         ),
                                       ),
                                     ],

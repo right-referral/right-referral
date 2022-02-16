@@ -37,7 +37,7 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -149,8 +149,9 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                             buttonSize: 46,
                                             icon: Icon(
                                               Icons.chevron_left_rounded,
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
                                               size: 24,
                                             ),
                                             onPressed: () async {
@@ -184,7 +185,8 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                                   buttonSize: 46,
                                                   icon: Icon(
                                                     Icons.reply_rounded,
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .tertiaryColor,
                                                     size: 16,
                                                   ),
@@ -212,7 +214,8 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                   Expanded(
                                     child: Text(
                                       companyDetailsCompaniesRecord.companyName,
-                                      style: FlutterFlowTheme.title3,
+                                      style:
+                                          FlutterFlowTheme.of(context).title3,
                                     ),
                                   ),
                                 ],
@@ -226,7 +229,8 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                 children: [
                                   Text(
                                     companyDetailsCompaniesRecord.companySize,
-                                    style: FlutterFlowTheme.bodyText2,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText2,
                                   ),
                                 ],
                               ),
@@ -239,10 +243,12 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                 children: [
                                   Text(
                                     'Description',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -257,7 +263,8 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                     child: Text(
                                       companyDetailsCompaniesRecord
                                           .companyDescription,
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],

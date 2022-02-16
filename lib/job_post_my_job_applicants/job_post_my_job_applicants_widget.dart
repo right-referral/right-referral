@@ -38,7 +38,7 @@ class _JobPostMyJobApplicantsWidgetState
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -139,8 +139,8 @@ class _JobPostMyJobApplicantsWidgetState
                                           buttonSize: 46,
                                           icon: Icon(
                                             Icons.chevron_left_rounded,
-                                            color:
-                                                FlutterFlowTheme.tertiaryColor,
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiaryColor,
                                             size: 24,
                                           ),
                                           onPressed: () async {
@@ -169,8 +169,9 @@ class _JobPostMyJobApplicantsWidgetState
                                               buttonSize: 46,
                                               icon: Icon(
                                                 Icons.reply_rounded,
-                                                color: FlutterFlowTheme
-                                                    .tertiaryColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiaryColor,
                                                 size: 16,
                                               ),
                                               onPressed: () async {
@@ -201,7 +202,7 @@ class _JobPostMyJobApplicantsWidgetState
                                   child: Text(
                                     jobPostMyJobApplicantsJobPostsRecord
                                         .jobName,
-                                    style: FlutterFlowTheme.title3,
+                                    style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),
                               ],
@@ -216,18 +217,21 @@ class _JobPostMyJobApplicantsWidgetState
                                 Text(
                                   jobPostMyJobApplicantsJobPostsRecord
                                       .jobCompany,
-                                  style: FlutterFlowTheme.bodyText2,
+                                  style: FlutterFlowTheme.of(context).bodyText2,
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       8, 0, 0, 0),
                                   child: Text(
                                     '\$${jobPostMyJobApplicantsJobPostsRecord.salary}k',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.primaryColor,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                   ),
                                 ),
                               ],
@@ -241,10 +245,12 @@ class _JobPostMyJobApplicantsWidgetState
                               children: [
                                 Text(
                                   'Description',
-                                  style: FlutterFlowTheme.bodyText2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText2
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                 ),
                               ],
                             ),
@@ -259,7 +265,8 @@ class _JobPostMyJobApplicantsWidgetState
                                   child: Text(
                                     jobPostMyJobApplicantsJobPostsRecord
                                         .jobDescription,
-                                    style: FlutterFlowTheme.bodyText1,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
                                   ),
                                 ),
                               ],
@@ -275,7 +282,7 @@ class _JobPostMyJobApplicantsWidgetState
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.lineColor,
+                      color: FlutterFlowTheme.of(context).lineColor,
                     ),
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
@@ -287,10 +294,12 @@ class _JobPostMyJobApplicantsWidgetState
                             children: [
                               Text(
                                 'Your Applicants',
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                             ],
                           ),
@@ -319,7 +328,8 @@ class _JobPostMyJobApplicantsWidgetState
                                         width: 50,
                                         height: 50,
                                         child: SpinKitThreeBounce(
-                                          color: FlutterFlowTheme.primaryColor,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
                                           size: 50,
                                         ),
                                       ),
@@ -364,7 +374,8 @@ class _JobPostMyJobApplicantsWidgetState
                                                   width: 50,
                                                   height: 50,
                                                   child: SpinKitThreeBounce(
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .primaryColor,
                                                     size: 50,
                                                   ),
@@ -391,7 +402,8 @@ class _JobPostMyJobApplicantsWidgetState
                                                 width: 100,
                                                 height: 70,
                                                 decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .tertiaryColor,
                                                   boxShadow: [
                                                     BoxShadow(
@@ -403,7 +415,8 @@ class _JobPostMyJobApplicantsWidgetState
                                                   borderRadius:
                                                       BorderRadius.circular(8),
                                                   border: Border.all(
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .lineColor,
                                                     width: 1,
                                                   ),
@@ -456,9 +469,9 @@ class _JobPostMyJobApplicantsWidgetState
                                                           Text(
                                                             containerUsersRecord
                                                                 .displayName,
-                                                            style:
-                                                                FlutterFlowTheme
-                                                                    .subtitle1,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .subtitle1,
                                                           ),
                                                           Padding(
                                                             padding:
@@ -476,7 +489,8 @@ class _JobPostMyJobApplicantsWidgetState
                                                                 Text(
                                                                   containerUsersRecord
                                                                       .positionTitle,
-                                                                  style: FlutterFlowTheme
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
                                                                       .bodyText2,
                                                                 ),
                                                                 Padding(
@@ -494,16 +508,17 @@ class _JobPostMyJobApplicantsWidgetState
                                                                       replacement:
                                                                           '…',
                                                                     ),
-                                                                    style: FlutterFlowTheme
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
                                                                         .bodyText2
                                                                         .override(
-                                                                      fontFamily:
-                                                                          'Lexend Deca',
-                                                                      color: FlutterFlowTheme
-                                                                          .primaryColor,
-                                                                      fontSize:
-                                                                          12,
-                                                                    ),
+                                                                          fontFamily:
+                                                                              'Lexend Deca',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryColor,
+                                                                          fontSize:
+                                                                              12,
+                                                                        ),
                                                                   ),
                                                                 ),
                                                               ],

@@ -55,16 +55,16 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
         title: Text(
           'Company Profile',
           textAlign: TextAlign.start,
-          style: FlutterFlowTheme.subtitle1.override(
-            fontFamily: 'Lexend Deca',
-            fontWeight: FontWeight.bold,
-          ),
+          style: FlutterFlowTheme.of(context).subtitle1.override(
+                fontFamily: 'Lexend Deca',
+                fontWeight: FontWeight.bold,
+              ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.tertiaryColor,
+      backgroundColor: FlutterFlowTheme.of(context).tertiaryColor,
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -87,8 +87,8 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                         await selectMediaWithSourceBottomSheet(
                       context: context,
                       allowPhoto: true,
-                      backgroundColor: FlutterFlowTheme.darkText,
-                      textColor: FlutterFlowTheme.tertiaryColor,
+                      backgroundColor: FlutterFlowTheme.of(context).darkText,
+                      textColor: FlutterFlowTheme.of(context).tertiaryColor,
                       pickerFontFamily: 'Lexend Deca',
                     );
                     if (selectedMedia != null &&
@@ -140,7 +140,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                             width: 75,
                             height: 75,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.background,
+                              color: FlutterFlowTheme.of(context).background,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: InkWell(
@@ -149,8 +149,10 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                     await selectMediaWithSourceBottomSheet(
                                   context: context,
                                   allowPhoto: true,
-                                  backgroundColor: FlutterFlowTheme.darkText,
-                                  textColor: FlutterFlowTheme.tertiaryColor,
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).darkText,
+                                  textColor: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
                                   pickerFontFamily: 'Lexend Deca',
                                 );
                                 if (selectedMedia != null &&
@@ -198,10 +200,14 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 controller: companyNameController,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelStyle: FlutterFlowTheme.title3.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.grayIcon400,
-                                  ),
+                                  labelText: 'Company Name',
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .title3
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .grayIcon400,
+                                      ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
@@ -223,10 +229,13 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                     ),
                                   ),
                                 ),
-                                style: FlutterFlowTheme.title3.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.darkText,
-                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .title3
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color:
+                                          FlutterFlowTheme.of(context).darkText,
+                                    ),
                               ),
                             ),
                           ),
@@ -235,7 +244,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                     ),
                     Divider(
                       thickness: 1,
-                      color: FlutterFlowTheme.lineColor,
+                      color: FlutterFlowTheme.of(context).lineColor,
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -248,10 +257,14 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               controller: websiteController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelStyle: FlutterFlowTheme.title3.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.grayIcon400,
-                                ),
+                                labelText: 'Website',
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .title3
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.of(context)
+                                          .grayIcon400,
+                                    ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -273,7 +286,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                   ),
                                 ),
                               ),
-                              style: FlutterFlowTheme.subtitle2,
+                              style: FlutterFlowTheme.of(context).subtitle2,
                             ),
                           ),
                         ),
@@ -281,7 +294,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                     ),
                     Divider(
                       thickness: 1,
-                      color: FlutterFlowTheme.lineColor,
+                      color: FlutterFlowTheme.of(context).lineColor,
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -294,10 +307,14 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               controller: descriptionController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelStyle: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.grayIcon400,
-                                ),
+                                labelText: 'A little bit about your company',
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.of(context)
+                                          .grayIcon400,
+                                    ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -319,7 +336,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                   ),
                                 ),
                               ),
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                               maxLines: 5,
                               keyboardType: TextInputType.multiline,
                             ),
@@ -329,7 +346,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                     ),
                     Divider(
                       thickness: 1,
-                      color: FlutterFlowTheme.lineColor,
+                      color: FlutterFlowTheme.of(context).lineColor,
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -342,18 +359,28 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                             color: Colors.white,
                           ),
                           child: FlutterFlowDropDown(
-                            options: [].toList(),
+                            initialOption: companySizeValue ??= 'Company Size',
+                            options: [
+                              'Company Size',
+                              '1-10',
+                              '11-50',
+                              '51-100',
+                              '100+'
+                            ].toList(),
                             onChanged: (val) =>
                                 setState(() => companySizeValue = val),
                             width: 130,
                             height: 40,
-                            textStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            textStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             icon: FaIcon(
                               FontAwesomeIcons.chevronDown,
-                              color: FlutterFlowTheme.grayIcon400,
+                              color: FlutterFlowTheme.of(context).grayIcon400,
                               size: 20,
                             ),
                             fillColor: Colors.white,
@@ -369,7 +396,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                     ),
                     Divider(
                       thickness: 1,
-                      color: FlutterFlowTheme.lineColor,
+                      color: FlutterFlowTheme.of(context).lineColor,
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -382,10 +409,14 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               controller: locationController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelStyle: FlutterFlowTheme.subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.grayIcon400,
-                                ),
+                                labelText: 'Location',
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.of(context)
+                                          .grayIcon400,
+                                    ),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -407,10 +438,13 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                   ),
                                 ),
                               ),
-                              style: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.darkText,
-                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color:
+                                        FlutterFlowTheme.of(context).darkText,
+                                  ),
                             ),
                           ),
                         ),
@@ -418,7 +452,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                     ),
                     Divider(
                       thickness: 1,
-                      color: FlutterFlowTheme.lineColor,
+                      color: FlutterFlowTheme.of(context).lineColor,
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -434,11 +468,14 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                             options: FFButtonOptions(
                               width: 130,
                               height: 50,
-                              color: FlutterFlowTheme.background,
-                              textStyle: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.grayIcon400,
-                              ),
+                              color: FlutterFlowTheme.of(context).background,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .grayIcon400,
+                                  ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1,
@@ -473,11 +510,13 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                             options: FFButtonOptions(
                               width: 130,
                               height: 50,
-                              color: FlutterFlowTheme.primaryColor,
-                              textStyle: FlutterFlowTheme.subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Colors.white,
-                              ),
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Colors.white,
+                                  ),
                               elevation: 2,
                               borderSide: BorderSide(
                                 color: Colors.transparent,

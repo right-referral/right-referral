@@ -30,7 +30,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.darkText,
+        backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -39,7 +39,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.tertiaryColor,
+            color: FlutterFlowTheme.of(context).tertiaryColor,
             size: 30,
           ),
           onPressed: () async {
@@ -61,7 +61,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                 width: double.infinity,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.darkText,
+                  color: FlutterFlowTheme.of(context).darkText,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 3,
@@ -80,10 +80,14 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                           controller: textController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelStyle: FlutterFlowTheme.subtitle1.override(
-                              fontFamily: 'Lexend Deca',
-                              color: FlutterFlowTheme.grayIcon400,
-                            ),
+                            labelText: 'Search candidates...',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle1
+                                .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -105,10 +109,13 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.subtitle1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.tertiaryColor,
-                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle1
+                              .override(
+                                fontFamily: 'Lexend Deca',
+                                color:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
+                              ),
                         ),
                       ),
                     ),
@@ -119,7 +126,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                       buttonSize: 60,
                       icon: Icon(
                         Icons.search_sharp,
-                        color: FlutterFlowTheme.tertiaryColor,
+                        color: FlutterFlowTheme.of(context).tertiaryColor,
                         size: 30,
                       ),
                       onPressed: () async {
@@ -149,7 +156,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                         width: 50,
                         height: 50,
                         child: SpinKitThreeBounce(
-                          color: FlutterFlowTheme.primaryColor,
+                          color: FlutterFlowTheme.of(context).primaryColor,
                           size: 50,
                         ),
                       ),
@@ -196,7 +203,8 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                                     width: 50,
                                     height: 50,
                                     child: SpinKitThreeBounce(
-                                      color: FlutterFlowTheme.primaryColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
                                       size: 50,
                                     ),
                                   ),
@@ -220,7 +228,8 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                                   width: 100,
                                   height: 70,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.tertiaryColor,
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
                                     boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4,
@@ -230,7 +239,8 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                                     ],
                                     borderRadius: BorderRadius.circular(8),
                                     border: Border.all(
-                                      color: FlutterFlowTheme.lineColor,
+                                      color: FlutterFlowTheme.of(context)
+                                          .lineColor,
                                       width: 1,
                                     ),
                                   ),
@@ -268,7 +278,9 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                                           children: [
                                             Text(
                                               containerUsersRecord.displayName,
-                                              style: FlutterFlowTheme.subtitle1,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle1,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -279,7 +291,8 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                                                   Text(
                                                     containerUsersRecord
                                                         .positionTitle,
-                                                    style: FlutterFlowTheme
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText2,
                                                   ),
                                                   Padding(
@@ -293,15 +306,18 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                                                         maxChars: 16,
                                                         replacement: '…',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontSize: 12,
-                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText2
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                                fontSize: 12,
+                                                              ),
                                                     ),
                                                   ),
                                                 ],

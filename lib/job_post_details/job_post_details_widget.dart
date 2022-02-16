@@ -40,7 +40,7 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -144,8 +144,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                             buttonSize: 46,
                                             icon: Icon(
                                               Icons.chevron_left_rounded,
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiaryColor,
                                               size: 24,
                                             ),
                                             onPressed: () async {
@@ -179,7 +180,8 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                                   buttonSize: 46,
                                                   icon: Icon(
                                                     Icons.reply_rounded,
-                                                    color: FlutterFlowTheme
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .tertiaryColor,
                                                     size: 16,
                                                   ),
@@ -220,13 +222,15 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                                         .likedPost,
                                                 onIcon: Icon(
                                                   Icons.favorite_rounded,
-                                                  color: FlutterFlowTheme
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .primaryColor,
                                                   size: 16,
                                                 ),
                                                 offIcon: Icon(
                                                   Icons.favorite_border_rounded,
-                                                  color: FlutterFlowTheme
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .tertiaryColor,
                                                   size: 16,
                                                 ),
@@ -249,7 +253,8 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                   Expanded(
                                     child: Text(
                                       'Job Post',
-                                      style: FlutterFlowTheme.title3,
+                                      style:
+                                          FlutterFlowTheme.of(context).title3,
                                     ),
                                   ),
                                 ],
@@ -263,19 +268,22 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Text(
                                     'SpaceX',
-                                    style: FlutterFlowTheme.bodyText2,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText2,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8, 0, 0, 0),
                                     child: Text(
                                       '\$60k-\$70k',
-                                      style:
-                                          FlutterFlowTheme.bodyText2.override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.primaryColor,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText2
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -289,10 +297,12 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Text(
                                     'Description',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -306,7 +316,8 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                   Expanded(
                                     child: Text(
                                       'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],
@@ -320,10 +331,12 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Text(
                                     'Requirements',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -337,7 +350,8 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                   Expanded(
                                     child: Text(
                                       'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],
@@ -351,10 +365,12 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Text(
                                     'Preferred Skills & Expertise',
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText2
+                                        .override(
+                                          fontFamily: 'Lexend Deca',
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -368,7 +384,8 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                   Expanded(
                                     child: Text(
                                       'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
-                                      style: FlutterFlowTheme.bodyText1,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
                                     ),
                                   ),
                                 ],
@@ -384,7 +401,7 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                         width: MediaQuery.of(context).size.width,
                         height: 100,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.primaryColor,
+                          color: FlutterFlowTheme.of(context).primaryColor,
                         ),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 36),
@@ -396,12 +413,15 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                             options: FFButtonOptions(
                               width: 130,
                               height: 40,
-                              color: FlutterFlowTheme.primaryColor,
-                              textStyle: FlutterFlowTheme.subtitle1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.tertiaryColor,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle1
+                                  .override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.of(context)
+                                        .tertiaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                               elevation: 0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,

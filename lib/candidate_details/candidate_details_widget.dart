@@ -37,7 +37,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
               width: 50,
               height: 50,
               child: SpinKitThreeBounce(
-                color: FlutterFlowTheme.primaryColor,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 size: 50,
               ),
             ),
@@ -60,7 +60,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                           Container(
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.darkText,
+                              color: FlutterFlowTheme.of(context).darkText,
                             ),
                             child: Padding(
                               padding:
@@ -84,7 +84,9 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                             width: 40,
                                             height: 40,
                                             decoration: BoxDecoration(
-                                              color: FlutterFlowTheme.dark500,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .dark500,
                                               borderRadius:
                                                   BorderRadius.circular(8),
                                             ),
@@ -94,8 +96,9 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                               buttonSize: 46,
                                               icon: Icon(
                                                 Icons.arrow_back_rounded,
-                                                color: FlutterFlowTheme
-                                                    .grayIcon400,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grayIcon400,
                                                 size: 24,
                                               ),
                                               onPressed: () async {
@@ -143,15 +146,18 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                                   child: AutoSizeText(
                                                     candidateDetailsUsersRecord
                                                         .displayName,
-                                                    style: FlutterFlowTheme
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .subtitle1
                                                         .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
+                                                          fontFamily:
+                                                              'Lexend Deca',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
                                                   ),
                                                 ),
                                                 Padding(
@@ -160,13 +166,16 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                                   child: Text(
                                                     candidateDetailsUsersRecord
                                                         .positionTitle,
-                                                    style: FlutterFlowTheme
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText1
                                                         .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: FlutterFlowTheme
-                                                          .primaryColor,
-                                                    ),
+                                                          fontFamily:
+                                                              'Lexend Deca',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryColor,
+                                                        ),
                                                   ),
                                                 ),
                                               ],
@@ -193,7 +202,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                     24, 12, 0, 8),
                                 child: Text(
                                   'Short Description',
-                                  style: FlutterFlowTheme.bodyText2,
+                                  style: FlutterFlowTheme.of(context).bodyText2,
                                 ),
                               ),
                             ],
@@ -207,7 +216,8 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                       24, 0, 24, 0),
                                   child: Text(
                                     candidateDetailsUsersRecord.bio,
-                                    style: FlutterFlowTheme.bodyText1,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
                                   ),
                                 ),
                               ),
@@ -223,7 +233,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                 EdgeInsetsDirectional.fromSTEB(24, 12, 0, 8),
                             child: Text(
                               'Experience Level',
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                           ),
                         ],
@@ -237,7 +247,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                   EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 candidateDetailsUsersRecord.experienceLevel,
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -251,7 +261,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                 EdgeInsetsDirectional.fromSTEB(24, 12, 0, 8),
                             child: Text(
                               'Company',
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                           ),
                         ],
@@ -265,7 +275,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                   EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 candidateDetailsUsersRecord.currentCompany,
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -279,7 +289,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                 EdgeInsetsDirectional.fromSTEB(24, 12, 0, 8),
                             child: Text(
                               'Salary',
-                              style: FlutterFlowTheme.bodyText2,
+                              style: FlutterFlowTheme.of(context).bodyText2,
                             ),
                           ),
                         ],
@@ -293,7 +303,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                   EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                               child: Text(
                                 '\$${candidateDetailsUsersRecord.salary}k',
-                                style: FlutterFlowTheme.bodyText1,
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -309,7 +319,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                   width: MediaQuery.of(context).size.width,
                   height: 100,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.primaryColor,
+                    color: FlutterFlowTheme.of(context).primaryColor,
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 36),
@@ -328,12 +338,14 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                       options: FFButtonOptions(
                         width: 130,
                         height: 40,
-                        color: FlutterFlowTheme.primaryColor,
-                        textStyle: FlutterFlowTheme.subtitle1.override(
-                          fontFamily: 'Lexend Deca',
-                          color: FlutterFlowTheme.tertiaryColor,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        textStyle: FlutterFlowTheme.of(context)
+                            .subtitle1
+                            .override(
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context).tertiaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                         elevation: 0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
