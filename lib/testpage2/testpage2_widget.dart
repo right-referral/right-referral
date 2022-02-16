@@ -27,9 +27,13 @@ class _Testpage2WidgetState extends State<Testpage2Widget> {
         elevation: 8,
         child: Icon(
           Icons.create_rounded,
-          color: Colors.black,
+          color: Colors.white,
           size: 24,
         ),
+      ),
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [],
       ),
     );
   }
