@@ -11,12 +11,9 @@ import 'package:right_referral/login/login_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'm_a_i_n_home/m_a_i_n_home_widget.dart';
-import 'm_a_i_n_chat/m_a_i_n_chat_widget.dart';
-import 'm_a_i_n_candidates/m_a_i_n_candidates_widget.dart';
-import 'm_a_i_n_my_profile/m_a_i_n_my_profile_widget.dart';
-import 'home_page_o_l_d/home_page_o_l_d_widget.dart';
 import 'm_a_i_n_saved_jobs/m_a_i_n_saved_jobs_widget.dart';
+import 'm_a_i_n_chat/m_a_i_n_chat_widget.dart';
+import 'candidate_landing_page/candidate_landing_page_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -76,7 +73,6 @@ class _MyAppState extends State<MyApp> {
       locale: _locale,
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(brightness: Brightness.light),
-      darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,
       home: initialUser == null || displaySplashImage
           ? Container(
@@ -109,7 +105,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'MAINHome';
+  String _currentPage = 'CandidateLandingPage';
 
   @override
   void initState() {
@@ -120,12 +116,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'MAINHome': MAINHomeWidget(),
-      'MAIN_Chat': MAINChatWidget(),
-      'MAIN_Candidates': MAINCandidatesWidget(),
-      'MAIN_MyProfile': MAINMyProfileWidget(),
-      'HomePage_OLD': HomePageOLDWidget(),
       'MAINSavedJobs': MAINSavedJobsWidget(),
+      'MAIN_Chat': MAINChatWidget(),
+      'CandidateLandingPage': CandidateLandingPageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -142,11 +135,11 @@ class _NavBarPageState extends State<NavBarPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.work_outline,
+              Icons.favorite_border,
               size: 24,
             ),
             activeIcon: Icon(
-              Icons.work_outlined,
+              Icons.favorite_sharp,
               size: 24,
             ),
             label: ' ',
@@ -166,50 +159,14 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.group_outlined,
+              Icons.home_outlined,
               size: 24,
             ),
             activeIcon: Icon(
-              Icons.group,
+              Icons.home,
               size: 24,
             ),
-            label: ' ',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outlined,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.person_rounded,
-              size: 24,
-            ),
-            label: '',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.work_outline,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.work_outlined,
-              size: 24,
-            ),
-            label: ' ',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite_border,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.favorite_sharp,
-              size: 24,
-            ),
-            label: ' ',
+            label: 'Home',
             tooltip: '',
           )
         ],

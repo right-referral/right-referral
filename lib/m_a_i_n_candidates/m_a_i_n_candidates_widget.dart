@@ -28,7 +28,7 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
         title: Text(
           'Candidates',
           style: FlutterFlowTheme.of(context).title3.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: 'Roboto',
                 color: FlutterFlowTheme.of(context).tertiaryColor,
               ),
         ),
@@ -231,7 +231,7 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
                                                               .bodyText2
                                                               .override(
                                                                 fontFamily:
-                                                                    'Lexend Deca',
+                                                                    'Roboto',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,

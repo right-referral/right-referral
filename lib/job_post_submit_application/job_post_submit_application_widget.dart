@@ -247,7 +247,7 @@ class _JobPostSubmitApplicationWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Lexend Deca',
+                                            fontFamily: 'Roboto',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
                                             fontWeight: FontWeight.w600,
@@ -275,7 +275,7 @@ class _JobPostSubmitApplicationWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -297,7 +297,7 @@ class _JobPostSubmitApplicationWidgetState
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Lexend Deca',
+                                              fontFamily: 'Roboto',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .grayIcon,
@@ -343,7 +343,7 @@ class _JobPostSubmitApplicationWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -630,7 +630,7 @@ class _JobPostSubmitApplicationWidgetState
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle1
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .tertiaryColor,
                                         fontWeight: FontWeight.bold,

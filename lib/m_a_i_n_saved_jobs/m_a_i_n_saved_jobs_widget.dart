@@ -30,7 +30,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
         title: Text(
           'My Jobs',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: 'Roboto',
                 color: FlutterFlowTheme.of(context).tertiaryColor,
               ),
         ),
@@ -323,7 +323,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                         .bodyText1
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Lexend Deca',
+                                                                              'Roboto',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryColor,
                                                                           fontWeight:
@@ -544,7 +544,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                     .bodyText1
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Lexend Deca',
+                                                                          'Roboto',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryColor,

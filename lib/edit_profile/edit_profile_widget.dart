@@ -162,7 +162,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .subtitle2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .grayIcon400,
                                         ),
@@ -219,7 +219,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .subtitle2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .grayIcon400,
                                         ),
@@ -273,7 +273,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .subtitle2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .grayIcon400,
                                         ),
@@ -303,7 +303,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .darkText,
                                       ),
@@ -333,7 +333,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .subtitle2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .grayIcon400,
                                         ),
@@ -361,7 +361,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .darkText,
                                       ),
@@ -426,7 +426,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .subtitle2
                                           .override(
-                                            fontFamily: 'Lexend Deca',
+                                            fontFamily: 'Roboto',
                                             color: FlutterFlowTheme.of(context)
                                                 .grayIcon,
                                           ),
@@ -477,7 +477,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .subtitle2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .grayIcon,
                                         ),
@@ -505,7 +505,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .darkText,
                                       ),
@@ -607,7 +607,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             color: FlutterFlowTheme.of(context).primaryColor,
                             textStyle:
                                 FlutterFlowTheme.of(context).subtitle1.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color: FlutterFlowTheme.of(context)
                                           .tertiaryColor,
                                       fontWeight: FontWeight.bold,

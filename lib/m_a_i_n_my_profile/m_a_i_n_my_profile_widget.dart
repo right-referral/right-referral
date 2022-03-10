@@ -70,7 +70,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
             label: Text(
               'Add Job',
               style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Lexend Deca',
+                    fontFamily: 'Roboto',
                     color: FlutterFlowTheme.of(context).tertiaryColor,
                   ),
             ),
@@ -233,8 +233,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                           context)
                                                       .subtitle1
                                                       .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
+                                                        fontFamily: 'Roboto',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -254,8 +253,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                           context)
                                                       .bodyText1
                                                       .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
+                                                        fontFamily: 'Roboto',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -805,7 +803,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                                 .bodyText1
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Lexend Deca',
+                                                                      'Roboto',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon400,
@@ -829,7 +827,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget> {
                                                                 .bodyText1
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Lexend Deca',
+                                                                      'Roboto',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon400,

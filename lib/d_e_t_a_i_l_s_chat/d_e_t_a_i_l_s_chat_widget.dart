@@ -75,7 +75,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
         title: Text(
           widget.chatUser.displayName,
           style: FlutterFlowTheme.of(context).subtitle2.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: 'Roboto',
                 color: FlutterFlowTheme.of(context).tertiaryColor,
               ),
         ),

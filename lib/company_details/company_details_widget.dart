@@ -246,7 +246,7 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),

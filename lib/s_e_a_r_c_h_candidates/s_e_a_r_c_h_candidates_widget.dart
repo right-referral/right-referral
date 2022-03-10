@@ -84,7 +84,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .subtitle1
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).grayIcon400,
                                 ),
@@ -112,7 +112,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                           style: FlutterFlowTheme.of(context)
                               .subtitle1
                               .override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color:
                                     FlutterFlowTheme.of(context).tertiaryColor,
                               ),
@@ -312,7 +312,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                                                               .bodyText2
                                                               .override(
                                                                 fontFamily:
-                                                                    'Lexend Deca',
+                                                                    'Roboto',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,

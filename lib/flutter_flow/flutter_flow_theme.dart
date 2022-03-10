@@ -26,43 +26,43 @@ abstract class FlutterFlowTheme {
   Color dark500;
 
   TextStyle get title1 => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Roboto',
         color: Color(0xFF0C141D),
         fontWeight: FontWeight.w600,
         fontSize: 32,
       );
   TextStyle get title2 => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Roboto',
         color: darkText,
         fontWeight: FontWeight.w500,
         fontSize: 26,
       );
   TextStyle get title3 => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Roboto',
         color: darkText,
         fontWeight: FontWeight.w500,
         fontSize: 24,
       );
   TextStyle get subtitle1 => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Roboto',
         color: darkText,
         fontWeight: FontWeight.w500,
         fontSize: 20,
       );
   TextStyle get subtitle2 => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Roboto',
         color: darkText,
         fontWeight: FontWeight.normal,
         fontSize: 16,
       );
   TextStyle get bodyText1 => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Roboto',
         color: darkText,
         fontWeight: FontWeight.normal,
         fontSize: 14,
       );
   TextStyle get bodyText2 => GoogleFonts.getFont(
-        'Lexend Deca',
+        'Roboto',
         color: grayIcon,
         fontWeight: FontWeight.normal,
         fontSize: 12,
@@ -70,8 +70,8 @@ abstract class FlutterFlowTheme {
 }
 
 class LightModeTheme extends FlutterFlowTheme {
-  Color primaryColor = const Color(0xFFEE8B60);
-  Color secondaryColor = const Color(0xFF39D2C0);
+  Color primaryColor = const Color(0xFF20368F);
+  Color secondaryColor = const Color(0xFF829CD0);
   Color tertiaryColor = const Color(0xFFFFFFFF);
   Color alternate = const Color(0x00000000);
   Color primaryBackground = const Color(0x00000000);
@@ -81,8 +81,8 @@ class LightModeTheme extends FlutterFlowTheme {
 
   Color grayIcon = Color(0xFF57636C);
   Color darkText = Color(0xFF0C141D);
-  Color primary600 = Color(0xFFC3724C);
-  Color secondary600 = Color(0xFF2CAE9F);
+  Color primary600 = Color(0xFF20368F);
+  Color secondary600 = Color(0xFF829CD0);
   Color dark400 = Color(0xFF262D34);
   Color background = Color(0xFFF1F4F8);
   Color grayIcon400 = Color(0xFFABB3BA);

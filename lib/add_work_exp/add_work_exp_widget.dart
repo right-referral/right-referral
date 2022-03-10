@@ -59,7 +59,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
               'Work History',
               textAlign: TextAlign.start,
               style: FlutterFlowTheme.of(context).subtitle1.override(
-                    fontFamily: 'Lexend Deca',
+                    fontFamily: 'Roboto',
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -213,7 +213,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                                 .subtitle1
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Lexend Deca',
+                                                                      'Roboto',
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
@@ -232,7 +232,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                               .subtitle2
                                                               .override(
                                                                 fontFamily:
-                                                                    'Lexend Deca',
+                                                                    'Roboto',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,
@@ -351,7 +351,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Lexend Deca',
+                                            fontFamily: 'Roboto',
                                             color: FlutterFlowTheme.of(context)
                                                 .grayIcon400,
                                           ),
@@ -418,7 +418,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                             color: FlutterFlowTheme.of(context).primaryColor,
                             textStyle:
                                 FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color: Colors.white,
                                     ),
                             borderSide: BorderSide(

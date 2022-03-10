@@ -28,7 +28,7 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
         title: Text(
           'Messages',
           style: FlutterFlowTheme.of(context).title3.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: 'Roboto',
                 color: FlutterFlowTheme.of(context).tertiaryColor,
               ),
         ),

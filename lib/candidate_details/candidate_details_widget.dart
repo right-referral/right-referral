@@ -150,8 +150,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                                             context)
                                                         .subtitle1
                                                         .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
+                                                          fontFamily: 'Roboto',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .tertiaryColor,
@@ -170,8 +169,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                                             context)
                                                         .bodyText1
                                                         .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
+                                                          fontFamily: 'Roboto',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryColor,
@@ -342,7 +340,7 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                         textStyle: FlutterFlowTheme.of(context)
                             .subtitle1
                             .override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Roboto',
                               color: FlutterFlowTheme.of(context).tertiaryColor,
                               fontWeight: FontWeight.bold,
                             ),

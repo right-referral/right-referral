@@ -56,7 +56,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
           'Company Profile',
           textAlign: TextAlign.start,
           style: FlutterFlowTheme.of(context).subtitle1.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: 'Roboto',
                 fontWeight: FontWeight.bold,
               ),
         ),
@@ -204,7 +204,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .title3
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon400,
                                       ),
@@ -232,7 +232,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color:
                                           FlutterFlowTheme.of(context).darkText,
                                     ),
@@ -261,7 +261,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color: FlutterFlowTheme.of(context)
                                           .grayIcon400,
                                     ),
@@ -311,7 +311,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color: FlutterFlowTheme.of(context)
                                           .grayIcon400,
                                     ),
@@ -374,7 +374,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).grayIcon400,
                                 ),
@@ -413,7 +413,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color: FlutterFlowTheme.of(context)
                                           .grayIcon400,
                                     ),
@@ -441,7 +441,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color:
                                         FlutterFlowTheme.of(context).darkText,
                                   ),
@@ -472,7 +472,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
@@ -514,7 +514,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: Colors.white,
                                   ),
                               elevation: 2,

@@ -12,6 +12,8 @@ import 'schema/saved_jobs_record.dart';
 import 'schema/applied_jobs_record.dart';
 import 'schema/chats_record.dart';
 import 'schema/chat_messages_record.dart';
+import 'schema/candidate_profile_record.dart';
+import 'schema/project_history_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -26,6 +28,8 @@ export 'schema/saved_jobs_record.dart';
 export 'schema/applied_jobs_record.dart';
 export 'schema/chats_record.dart';
 export 'schema/chat_messages_record.dart';
+export 'schema/candidate_profile_record.dart';
+export 'schema/project_history_record.dart';
 
 /// Functions to query JobPostsRecords (as a Stream and as a Future).
 Stream<List<JobPostsRecord>> queryJobPostsRecord(
@@ -149,6 +153,40 @@ Future<List<ChatMessagesRecord>> queryChatMessagesRecordOnce(
         bool singleRecord = false}) =>
     queryCollectionOnce(
         ChatMessagesRecord.collection, ChatMessagesRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query CandidateProfileRecords (as a Stream and as a Future).
+Stream<List<CandidateProfileRecord>> queryCandidateProfileRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(
+        CandidateProfileRecord.collection, CandidateProfileRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<CandidateProfileRecord>> queryCandidateProfileRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(
+        CandidateProfileRecord.collection, CandidateProfileRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+/// Functions to query ProjectHistoryRecords (as a Stream and as a Future).
+Stream<List<ProjectHistoryRecord>> queryProjectHistoryRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(
+        ProjectHistoryRecord.collection, ProjectHistoryRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<ProjectHistoryRecord>> queryProjectHistoryRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(
+        ProjectHistoryRecord.collection, ProjectHistoryRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

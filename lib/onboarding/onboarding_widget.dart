@@ -1,7 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
+import '../m_a_i_n_home/m_a_i_n_home_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -114,7 +114,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .title1
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .tertiaryColor,
@@ -138,7 +138,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color: Color(0x99FFFFFF),
                                               ),
                                         ),
@@ -194,7 +194,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .title1
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .tertiaryColor,
@@ -218,7 +218,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color: Color(0x99FFFFFF),
                                               ),
                                         ),
@@ -274,7 +274,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .title1
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .tertiaryColor,
@@ -298,7 +298,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color: Color(0x99FFFFFF),
                                               ),
                                         ),
@@ -360,8 +360,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              NavBarPage(initialPage: 'MAINHome'),
+                          builder: (context) => MAINHomeWidget(),
                         ),
                       );
                     },
@@ -372,7 +371,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                       color: FlutterFlowTheme.of(context).darkText,
                       textStyle:
                           FlutterFlowTheme.of(context).subtitle2.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: Colors.white,
                               ),
                       elevation: 2,

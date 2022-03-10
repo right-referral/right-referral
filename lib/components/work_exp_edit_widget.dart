@@ -80,7 +80,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                   child: Text(
                     'Work Experience',
                     style: FlutterFlowTheme.of(context).title2.override(
-                          fontFamily: 'Lexend Deca',
+                          fontFamily: 'Roboto',
                           fontWeight: FontWeight.w600,
                         ),
                   ),
@@ -111,7 +111,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .title3
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).grayIcon400,
                                 ),
@@ -137,7 +137,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.of(context).title3.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).darkText,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -156,7 +156,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).grayIcon400,
                                 ),
@@ -184,7 +184,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                           style: FlutterFlowTheme.of(context)
                               .subtitle2
                               .override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).darkText,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -251,15 +251,16 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                           children: [
                                             Text(
                                               'Start Date',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .grayIcon400,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Roboto',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .grayIcon400,
+                                                      ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -339,7 +340,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
+                                                  fontFamily: 'Roboto',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .grayIcon400,
@@ -395,7 +396,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon400,
                                       ),
@@ -426,7 +427,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color:
                                           FlutterFlowTheme.of(context).darkText,
                                     ),
@@ -473,7 +474,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color: Colors.white,
                                     ),
                                 elevation: 2,

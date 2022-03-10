@@ -30,7 +30,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
         title: Text(
           'Welcome',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: 'Roboto',
                 color: FlutterFlowTheme.of(context).tertiaryColor,
               ),
         ),
@@ -273,7 +273,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                                               .bodyText1
                                                               .override(
                                                                 fontFamily:
-                                                                    'Lexend Deca',
+                                                                    'Roboto',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,
@@ -332,7 +332,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .grayIcon400,
@@ -351,7 +351,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .grayIcon,

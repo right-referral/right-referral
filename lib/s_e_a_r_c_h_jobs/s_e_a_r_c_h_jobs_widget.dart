@@ -84,7 +84,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                           labelStyle: FlutterFlowTheme.of(context)
                               .subtitle1
                               .override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).grayIcon400,
                               ),
                           enabledBorder: UnderlineInputBorder(
@@ -111,7 +111,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                               EdgeInsetsDirectional.fromSTEB(16, 12, 12, 8),
                         ),
                         style: FlutterFlowTheme.of(context).subtitle1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Roboto',
                               color: FlutterFlowTheme.of(context).tertiaryColor,
                             ),
                       ),
@@ -314,7 +314,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                                               .bodyText1
                                                               .override(
                                                                 fontFamily:
-                                                                    'Lexend Deca',
+                                                                    'Roboto',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,
@@ -373,7 +373,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .grayIcon400,
@@ -392,7 +392,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
-                                                fontFamily: 'Lexend Deca',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .grayIcon,

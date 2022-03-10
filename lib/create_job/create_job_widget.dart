@@ -214,7 +214,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               labelText: 'Position Title',
                               labelStyle:
                                   FlutterFlowTheme.of(context).title3.override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon400,
                                       ),
@@ -240,7 +240,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               ),
                             ),
                             style: FlutterFlowTheme.of(context).title3.override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context).darkText,
                                 ),
                           ),
@@ -262,7 +262,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
@@ -310,7 +310,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
@@ -319,7 +319,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
@@ -367,7 +367,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
@@ -375,7 +375,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
@@ -443,7 +443,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color: FlutterFlowTheme.of(context).darkText,
                                 ),
                             icon: FaIcon(
@@ -546,7 +546,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
@@ -607,7 +607,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                     height: 40,
                     color: FlutterFlowTheme.of(context).primaryColor,
                     textStyle: FlutterFlowTheme.of(context).subtitle1.override(
-                          fontFamily: 'Lexend Deca',
+                          fontFamily: 'Roboto',
                           color: FlutterFlowTheme.of(context).tertiaryColor,
                           fontWeight: FontWeight.bold,
                         ),

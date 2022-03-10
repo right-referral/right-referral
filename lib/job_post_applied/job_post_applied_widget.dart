@@ -209,7 +209,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyText2
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryColor,
                                     fontWeight: FontWeight.w600,
@@ -228,7 +228,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                             'Description',
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.bold,
                                     ),
                           ),
@@ -258,7 +258,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                             'Requirements',
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.bold,
                                     ),
                           ),
@@ -288,7 +288,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                             'Preferred Skills & Expertise',
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.bold,
                                     ),
                           ),
@@ -329,7 +329,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyText2
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -357,7 +357,7 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyText2
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),

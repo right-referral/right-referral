@@ -227,7 +227,7 @@ class _JobPostMyJobApplicantsWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
                                           fontWeight: FontWeight.w600,
@@ -248,7 +248,7 @@ class _JobPostMyJobApplicantsWidgetState
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
@@ -297,7 +297,7 @@ class _JobPostMyJobApplicantsWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText2
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
@@ -513,7 +513,7 @@ class _JobPostMyJobApplicantsWidgetState
                                                                         .bodyText2
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Lexend Deca',
+                                                                              'Roboto',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryColor,
                                                                           fontSize:

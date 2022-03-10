@@ -287,7 +287,7 @@ class _JobPostDetailsActualWidgetState
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Lexend Deca',
+                                            fontFamily: 'Roboto',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
                                             fontWeight: FontWeight.w600,
@@ -308,7 +308,7 @@ class _JobPostDetailsActualWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -343,7 +343,7 @@ class _JobPostDetailsActualWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -378,7 +378,7 @@ class _JobPostDetailsActualWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -460,7 +460,7 @@ class _JobPostDetailsActualWidgetState
                                     textStyle: FlutterFlowTheme.of(context)
                                         .subtitle1
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .tertiaryColor,
                                           fontWeight: FontWeight.bold,
