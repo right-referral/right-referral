@@ -4,7 +4,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login/login_widget.dart';
-import '../m_a_i_n_home/m_a_i_n_home_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -68,12 +68,16 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
-                          child: Image.asset(
-                            'assets/images/rr_logo.png',
-                            width: 170,
-                            height: 70,
-                            fit: BoxFit.fitWidth,
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                          child: Text(
+                            'right-referral.com',
+                            textAlign: TextAlign.center,
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w900,
+                                    ),
                           ),
                         ),
                       ],
@@ -230,6 +234,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         () => passwordVisibility =
                                             !passwordVisibility,
                                       ),
+                                      focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
                                         passwordVisibility
                                             ? Icons.visibility_outlined
@@ -294,7 +299,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ],
@@ -320,11 +325,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   if (user == null) {
                                     return;
                                   }
-                                  await Navigator.push(
+                                  await Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => MAINHomeWidget(),
+                                      builder: (context) => NavBarPage(
+                                          initialPage: 'loginProcessingPage'),
                                     ),
+                                    (r) => false,
                                   );
                                 },
                                 text: 'Continue as Guest',
@@ -346,7 +353,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ),
@@ -381,7 +388,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ),

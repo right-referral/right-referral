@@ -5,7 +5,6 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../onboarding/onboarding_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -403,13 +402,8 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         FFButtonWidget(
-                          onPressed: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => OnboardingWidget(),
-                              ),
-                            );
+                          onPressed: () {
+                            print('Button pressed ...');
                           },
                           text: 'Continue',
                           options: FFButtonOptions(
@@ -425,7 +419,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                               color: Colors.transparent,
                               width: 1,
                             ),
-                            borderRadius: 12,
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                       ],

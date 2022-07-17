@@ -6,14 +6,11 @@ import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
 
 import 'flutter_flow/flutter_flow_theme.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:right_referral/login/login_widget.dart';
-import 'flutter_flow/flutter_flow_theme.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'm_a_i_n_saved_jobs/m_a_i_n_saved_jobs_widget.dart';
-import 'm_a_i_n_chat/m_a_i_n_chat_widget.dart';
-import 'candidate_landing_page/candidate_landing_page_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +22,7 @@ void main() async {
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>();
@@ -34,15 +31,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Locale _locale;
   ThemeMode _themeMode = ThemeMode.system;
+
   Stream<RightReferralFirebaseUser> userStream;
   RightReferralFirebaseUser initialUser;
   bool displaySplashImage = true;
-  final authUserSub = authenticatedUserStream.listen((_) {});
 
-  void setLocale(Locale value) => setState(() => _locale = value);
-  void setThemeMode(ThemeMode mode) => setState(() {
-        _themeMode = mode;
-      });
+  final authUserSub = authenticatedUserStream.listen((_) {});
 
   @override
   void initState() {
@@ -50,7 +44,9 @@ class _MyAppState extends State<MyApp> {
     userStream = rightReferralFirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
     Future.delayed(
-        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+      Duration(seconds: 1),
+      () => setState(() => displaySplashImage = false),
+    );
   }
 
   @override
@@ -59,6 +55,11 @@ class _MyAppState extends State<MyApp> {
 
     super.dispose();
   }
+
+  void setLocale(Locale value) => setState(() => _locale = value);
+  void setThemeMode(ThemeMode mode) => setState(() {
+        _themeMode = mode;
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +106,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'CandidateLandingPage';
+  String _currentPage = 'loginProcessingPage';
 
   @override
   void initState() {
@@ -116,9 +117,8 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'MAINSavedJobs': MAINSavedJobsWidget(),
       'MAIN_Chat': MAINChatWidget(),
-      'CandidateLandingPage': CandidateLandingPageWidget(),
+      'loginProcessingPage': LoginProcessingPageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -133,18 +133,6 @@ class _NavBarPageState extends State<NavBarPage> {
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite_border,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.favorite_sharp,
-              size: 24,
-            ),
-            label: ' ',
-            tooltip: '',
-          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.chat_bubble_outline,
@@ -162,11 +150,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.home_outlined,
               size: 24,
             ),
-            activeIcon: Icon(
-              Icons.home,
-              size: 24,
-            ),
-            label: 'Home',
+            label: '',
             tooltip: '',
           )
         ],

@@ -196,7 +196,7 @@ class _CandidateRegisterationPartBWidgetState
                       ),
                       child: FlutterFlowDropDown(
                         initialOption: dropDownExperienceLevelValue ??=
-                            'Experience Level',
+                            '+8 years',
                         options: [
                           '< 6 Months',
                           '6m - 1y',
@@ -204,7 +204,7 @@ class _CandidateRegisterationPartBWidgetState
                           '+3 years',
                           '+5 years',
                           '+8 years'
-                        ].toList(),
+                        ],
                         onChanged: (val) =>
                             setState(() => dropDownExperienceLevelValue = val),
                         width: 130,

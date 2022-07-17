@@ -3,7 +3,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../forgot_password/forgot_password_widget.dart';
-import '../m_a_i_n_home/m_a_i_n_home_widget.dart';
 import '../main.dart';
 import '../register/register_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -68,11 +67,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                           child: AutoSizeText(
-                            '  right-referral\n                .com',
+                            '  right-referral.com',
                             style:
                                 FlutterFlowTheme.of(context).subtitle1.override(
                                       fontFamily: 'Roboto',
                                       color: Color(0xFFFFEBEE),
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w900,
                                     ),
                           ),
                         ),
@@ -224,6 +225,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         () => passwordVisibility =
                                             !passwordVisibility,
                                       ),
+                                      focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
                                         passwordVisibility
                                             ? Icons.visibility_outlined
@@ -279,7 +281,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                               FFButtonWidget(
@@ -297,7 +299,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => NavBarPage(
-                                          initialPage: 'CandidateLandingPage'),
+                                          initialPage: 'loginProcessingPage'),
                                     ),
                                     (r) => false,
                                   );
@@ -320,7 +322,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ],
@@ -346,11 +348,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   if (user == null) {
                                     return;
                                   }
-                                  await Navigator.push(
+                                  await Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => MAINHomeWidget(),
+                                      builder: (context) => NavBarPage(
+                                          initialPage: 'loginProcessingPage'),
                                     ),
+                                    (r) => false,
                                   );
                                 },
                                 text: 'Continue as Guest',
@@ -372,7 +376,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ),
@@ -407,7 +411,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ),

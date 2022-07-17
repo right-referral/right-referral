@@ -1,13 +1,14 @@
-import '../add_work_exp/add_work_exp_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
-import '../company_profile/company_profile_widget.dart';
+import '../candidate_landing_page/candidate_landing_page_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/upload_media.dart';
+import '../recruiter_landing_page/recruiter_landing_page_widget.dart';
+import '../referrer_landing_page/referrer_landing_page_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -22,11 +23,11 @@ class CreateProfileWidget extends StatefulWidget {
 }
 
 class _CreateProfileWidgetState extends State<CreateProfileWidget> {
-  String dropDownExperienceLevelValue;
   String uploadedFileUrl = '';
   TextEditingController textFieldFullNameController;
   TextEditingController textFieldPositionTitleController;
   TextEditingController textFieldShortDescriptionController;
+  String dropDownExperienceLevelValue;
   TextEditingController textFieldCurrentCompanyController;
   TextEditingController textFieldPhoneNumberController;
   TextEditingController textFieldSecondaryEmailController;
@@ -107,18 +108,24 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             allowPhoto: true,
                           );
                           if (selectedMedia != null &&
-                              validateFileFormat(
-                                  selectedMedia.storagePath, context)) {
+                              selectedMedia.every((m) =>
+                                  validateFileFormat(m.storagePath, context))) {
                             showUploadMessage(
                               context,
                               'Uploading file...',
                               showLoading: true,
                             );
-                            final downloadUrl = await uploadData(
-                                selectedMedia.storagePath, selectedMedia.bytes);
+                            final downloadUrls = (await Future.wait(
+                                    selectedMedia.map((m) async =>
+                                        await uploadData(
+                                            m.storagePath, m.bytes))))
+                                .where((u) => u != null)
+                                .toList();
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                            if (downloadUrl != null) {
-                              setState(() => uploadedFileUrl = downloadUrl);
+                            if (downloadUrls != null &&
+                                downloadUrls.length == selectedMedia.length) {
+                              setState(
+                                  () => uploadedFileUrl = downloadUrls.first);
                               showUploadMessage(
                                 context,
                                 'Success!',
@@ -313,8 +320,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           '1y - 3y',
                           '+3 years',
                           '+5 years',
-                          '+8 years'
-                        ].toList(),
+                          '+8 years',
+                          'Experience Level'
+                        ],
                         onChanged: (val) =>
                             setState(() => dropDownExperienceLevelValue = val),
                         width: 130,
@@ -548,7 +556,6 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                                       FlutterFlowTheme.of(context).grayIcon400,
                                   fontSize: 16,
                                 ),
-                            hintText: '[Some hint text...]',
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -807,7 +814,8 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         shortDescription:
                             textFieldShortDescriptionController.text,
                         email: currentUserEmail,
-                        password: currentUserDocument?.password,
+                        password:
+                            valueOrDefault(currentUserDocument?.password, ''),
                         photoUrl: uploadedFileUrl,
                         uid: currentUserUid,
                         profileType: 'Candidate',
@@ -833,7 +841,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AddWorkExpWidget(),
+                          builder: (context) => CandidateLandingPageWidget(),
                         ),
                       );
                     },
@@ -862,7 +870,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           ),
                           Expanded(
                             child: Text(
-                              'As an Individual',
+                              'Individual',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
@@ -908,7 +916,8 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           shortDescription:
                               textFieldShortDescriptionController.text,
                           email: currentUserEmail,
-                          password: currentUserDocument?.password,
+                          password:
+                              valueOrDefault(currentUserDocument?.password, ''),
                           photoUrl: uploadedFileUrl,
                           uid: currentUserUid,
                           profileType: 'Recruiter',
@@ -935,7 +944,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => CompanyProfileWidget(),
+                            builder: (context) => RecruiterLandingPageWidget(),
                           ),
                         );
                       },
@@ -964,7 +973,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             ),
                             Expanded(
                               child: Text(
-                                'As a Company',
+                                'Company',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
@@ -1011,7 +1020,8 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           shortDescription:
                               textFieldShortDescriptionController.text,
                           email: currentUserEmail,
-                          password: currentUserDocument?.password,
+                          password:
+                              valueOrDefault(currentUserDocument?.password, ''),
                           photoUrl: uploadedFileUrl,
                           uid: currentUserUid,
                           profileType: 'Referrer',
@@ -1038,7 +1048,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => CompanyProfileWidget(),
+                            builder: (context) => ReferrerLandingPageWidget(),
                           ),
                         );
                       },
@@ -1067,7 +1077,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             ),
                             Expanded(
                               child: Text(
-                                'As a Referrer',
+                                'Referrer',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
