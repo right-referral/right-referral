@@ -40,14 +40,19 @@ class _RegisterWidgetState extends State<RegisterWidget> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 1,
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width,
+              maxHeight: MediaQuery.of(context).size.height * 1,
+            ),
             decoration: BoxDecoration(
               color: Color(0xFF262D34),
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: Image.asset(
-                  'assets/images/alexandru-acea--WBYxmW4yuw-unsplash.jpg',
+                  'assets/images/word_cloud.jpg',
                 ).image,
               ),
+              shape: BoxShape.rectangle,
             ),
             child: Align(
               alignment: AlignmentDirectional(0, 1),
@@ -63,12 +68,16 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
-                          child: Image.asset(
-                            'assets/images/rr_logo.png',
-                            width: 170,
-                            height: 70,
-                            fit: BoxFit.fitWidth,
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                          child: Text(
+                            'right-referral.com',
+                            textAlign: TextAlign.center,
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w900,
+                                    ),
                           ),
                         ),
                       ],
@@ -104,11 +113,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  'Easy Signup for endless possibilities',
+                                  'Signup for endless possibilities',
                                   style: FlutterFlowTheme.of(context)
                                       .title1
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         fontSize: 20,
                                       ),
                                 ),
@@ -132,14 +141,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: Color(0xFF95A1AC),
                                         ),
                                     hintText: 'Enter your email here...',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: Color(0xFF95A1AC),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -166,7 +175,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: Color(0xFF2B343A),
                                       ),
                                 ),
@@ -190,14 +199,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: Color(0xFF95A1AC),
                                         ),
                                     hintText: 'Enter your password here...',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Lexend Deca',
+                                          fontFamily: 'Roboto',
                                           color: Color(0xFF95A1AC),
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -225,6 +234,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         () => passwordVisibility =
                                             !passwordVisibility,
                                       ),
+                                      focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
                                         passwordVisibility
                                             ? Icons.visibility_outlined
@@ -237,7 +247,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: Color(0xFF2B343A),
                                       ),
                                 ),
@@ -280,7 +290,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: Colors.white,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
@@ -289,7 +299,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ],
@@ -315,12 +325,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   if (user == null) {
                                     return;
                                   }
-                                  await Navigator.push(
+                                  await Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          NavBarPage(initialPage: 'MAINHome'),
+                                      builder: (context) => NavBarPage(
+                                          initialPage: 'loginProcessingPage'),
                                     ),
+                                    (r) => false,
                                   );
                                 },
                                 text: 'Continue as Guest',
@@ -332,7 +343,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryColor,
                                         fontSize: 14,
@@ -342,7 +353,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ),
@@ -367,7 +378,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        fontFamily: 'Roboto',
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryColor,
                                         fontSize: 14,
@@ -377,7 +388,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  borderRadius: 12,
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
                               ),
                             ),

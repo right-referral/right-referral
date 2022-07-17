@@ -1,13 +1,14 @@
-import '../add_work_exp/add_work_exp_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import '../company_profile/company_profile_widget.dart';
+import '../backend/firebase_storage/storage.dart';
+import '../candidate_landing_page/candidate_landing_page_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
+import '../flutter_flow/upload_media.dart';
+import '../recruiter_landing_page/recruiter_landing_page_widget.dart';
+import '../referrer_landing_page/referrer_landing_page_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -22,21 +23,33 @@ class CreateProfileWidget extends StatefulWidget {
 }
 
 class _CreateProfileWidgetState extends State<CreateProfileWidget> {
-  String dropDownValue;
-  TextEditingController textController1;
-  TextEditingController textController2;
-  TextEditingController textController3;
-  TextEditingController textController4;
-  double salaryRangeValue;
+  String uploadedFileUrl = '';
+  TextEditingController textFieldFullNameController;
+  TextEditingController textFieldPositionTitleController;
+  TextEditingController textFieldShortDescriptionController;
+  String dropDownExperienceLevelValue;
+  TextEditingController textFieldCurrentCompanyController;
+  TextEditingController textFieldPhoneNumberController;
+  TextEditingController textFieldSecondaryEmailController;
+  TextEditingController textFieldCurrentLocationController;
+  TextEditingController textFieldLinkdlnController;
+  TextEditingController textFieldWebsiteController;
+  TextEditingController textFieldGithubController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
+    textFieldCurrentCompanyController = TextEditingController();
+    textFieldFullNameController = TextEditingController();
+    textFieldPositionTitleController = TextEditingController();
+    textFieldShortDescriptionController = TextEditingController();
+    textFieldPhoneNumberController = TextEditingController();
+    textFieldSecondaryEmailController = TextEditingController();
+    textFieldCurrentLocationController = TextEditingController();
+    textFieldLinkdlnController = TextEditingController();
+    textFieldWebsiteController = TextEditingController();
+    textFieldGithubController = TextEditingController();
   }
 
   @override
@@ -44,18 +57,16 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: FlutterFlowTheme.of(context).primary600,
         iconTheme: IconThemeData(color: Colors.black),
         automaticallyImplyLeading: false,
-        leading: Icon(
-          Icons.chevron_left_rounded,
-          color: Colors.black,
-          size: 30,
-        ),
         title: Text(
           'Create Profile',
           textAlign: TextAlign.start,
-          style: FlutterFlowTheme.of(context).subtitle1,
+          style: FlutterFlowTheme.of(context).subtitle1.override(
+                fontFamily: 'Roboto',
+                color: FlutterFlowTheme.of(context).background,
+              ),
         ),
         actions: [],
         centerTitle: false,
@@ -90,8 +101,43 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           color: FlutterFlowTheme.of(context).grayIcon400,
                           size: 30,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          final selectedMedia =
+                              await selectMediaWithSourceBottomSheet(
+                            context: context,
+                            allowPhoto: true,
+                          );
+                          if (selectedMedia != null &&
+                              selectedMedia.every((m) =>
+                                  validateFileFormat(m.storagePath, context))) {
+                            showUploadMessage(
+                              context,
+                              'Uploading file...',
+                              showLoading: true,
+                            );
+                            final downloadUrls = (await Future.wait(
+                                    selectedMedia.map((m) async =>
+                                        await uploadData(
+                                            m.storagePath, m.bytes))))
+                                .where((u) => u != null)
+                                .toList();
+                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                            if (downloadUrls != null &&
+                                downloadUrls.length == selectedMedia.length) {
+                              setState(
+                                  () => uploadedFileUrl = downloadUrls.first);
+                              showUploadMessage(
+                                context,
+                                'Success!',
+                              );
+                            } else {
+                              showUploadMessage(
+                                context,
+                                'Failed to upload media',
+                              );
+                              return;
+                            }
+                          }
                         },
                       ),
                     ),
@@ -99,14 +145,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                         child: TextFormField(
-                          controller: textController1,
+                          controller: textFieldFullNameController,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Full Name',
                             labelStyle: FlutterFlowTheme.of(context)
                                 .title3
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).grayIcon400,
                                 ),
@@ -132,7 +178,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.of(context).title3.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).darkText,
                               ),
                         ),
@@ -153,14 +199,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(16, 8, 0, 0),
                       child: TextFormField(
-                        controller: textController2,
+                        controller: textFieldPositionTitleController,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Postition Title',
                           labelStyle: FlutterFlowTheme.of(context)
                               .title3
                               .override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).grayIcon400,
                               ),
                           enabledBorder: UnderlineInputBorder(
@@ -185,7 +231,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).title3.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Roboto',
                               color: FlutterFlowTheme.of(context).darkText,
                             ),
                       ),
@@ -202,14 +248,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                         child: TextFormField(
-                          controller: textController3,
+                          controller: textFieldShortDescriptionController,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Short Description',
                             labelStyle: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).grayIcon400,
                                 ),
@@ -237,7 +283,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           style: FlutterFlowTheme.of(context)
                               .subtitle2
                               .override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).darkText,
                               ),
                           maxLines: 4,
@@ -266,23 +312,29 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         color: Colors.white,
                       ),
                       child: FlutterFlowDropDown(
-                        initialOption: dropDownValue ??= 'Experience Level',
+                        initialOption: dropDownExperienceLevelValue ??=
+                            'Experience Level',
                         options: [
                           '< 6 Months',
                           '6m - 1y',
                           '1y - 3y',
                           '+3 years',
                           '+5 years',
-                          '+8 years'
-                        ].toList(),
-                        onChanged: (val) => setState(() => dropDownValue = val),
+                          '+8 years',
+                          'Experience Level'
+                        ],
+                        onChanged: (val) =>
+                            setState(() => dropDownExperienceLevelValue = val),
                         width: 130,
                         height: 40,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.of(context).grayIcon,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context)
+                            .subtitle2
+                            .override(
+                              fontFamily: 'Roboto',
+                              color: FlutterFlowTheme.of(context).grayIcon400,
+                              fontWeight: FontWeight.normal,
+                            ),
+                        hintText: 'Experience Level',
                         icon: FaIcon(
                           FontAwesomeIcons.chevronDown,
                           color: FlutterFlowTheme.of(context).grayIcon400,
@@ -314,14 +366,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                         child: TextFormField(
-                          controller: textController4,
+                          controller: textFieldCurrentCompanyController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Company',
+                            labelText: 'Current Company',
                             labelStyle: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Roboto',
                                   color:
                                       FlutterFlowTheme.of(context).grayIcon400,
                                 ),
@@ -349,7 +401,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           style: FlutterFlowTheme.of(context)
                               .subtitle2
                               .override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).darkText,
                               ),
                         ),
@@ -364,50 +416,359 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                 color: FlutterFlowTheme.of(context).lineColor,
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 4),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Salary',
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                        child: TextFormField(
+                          controller: textFieldPhoneNumberController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Phone Number',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).darkText,
+                              ),
+                          keyboardType: TextInputType.phone,
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
+              Divider(
+                height: 2,
+                thickness: 1,
+                color: Color(0xFFDBE2E7),
+              ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 4),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      '\$40,000',
-                      style: FlutterFlowTheme.of(context).bodyText2,
-                    ),
-                    Text(
-                      '\$150,000+',
-                      textAlign: TextAlign.end,
-                      style: FlutterFlowTheme.of(context).bodyText2,
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                        child: TextFormField(
+                          controller: textFieldSecondaryEmailController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Secondary Email',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Roboto',
+                                    color: Color(0xFF0C141D),
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                          keyboardType: TextInputType.emailAddress,
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
+              Divider(
+                height: 2,
+                thickness: 1,
+                color: Color(0xFFDBE2E7),
+              ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                child: Slider(
-                  activeColor: FlutterFlowTheme.of(context).secondaryColor,
-                  inactiveColor: Color(0xFF9E9E9E),
-                  min: 40000,
-                  max: 160000,
-                  value: salaryRangeValue ??= 100000,
-                  label: salaryRangeValue.toString(),
-                  divisions: 24,
-                  onChanged: (newValue) {
-                    setState(() => salaryRangeValue = newValue);
-                  },
+                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                        child: TextFormField(
+                          controller: textFieldCurrentLocationController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Current Location',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                  fontSize: 16,
+                                ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Roboto',
+                                    fontSize: 16,
+                                  ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+              Divider(
+                height: 2,
+                thickness: 1,
+                color: Color(0xFFDBE2E7),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                        child: TextFormField(
+                          controller: textFieldLinkdlnController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Linkdln',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).darkText,
+                              ),
+                          keyboardType: TextInputType.phone,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                height: 2,
+                thickness: 1,
+                color: Color(0xFFDBE2E7),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                        child: TextFormField(
+                          controller: textFieldWebsiteController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Website',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).darkText,
+                              ),
+                          keyboardType: TextInputType.url,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                height: 2,
+                thickness: 1,
+                color: Color(0xFFDBE2E7),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                        child: TextFormField(
+                          controller: textFieldGithubController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Github',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color:
+                                      FlutterFlowTheme.of(context).grayIcon400,
+                                ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).darkText,
+                              ),
+                          keyboardType: TextInputType.phone,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(
+                height: 2,
+                thickness: 1,
+                color: Color(0xFFDBE2E7),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 4),
@@ -442,18 +803,45 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   InkWell(
                     onTap: () async {
                       final usersUpdateData = createUsersRecordData(
-                        displayName: textController1.text,
-                        positionTitle: textController2.text,
-                        bio: textController3.text,
-                        experienceLevel: dropDownValue,
-                        currentCompany: textController4.text,
-                        salary: salaryRangeValue.toString(),
+                        displayName: textFieldFullNameController.text,
+                        positionTitle: textFieldPositionTitleController.text,
+                        bio: textFieldShortDescriptionController.text,
+                        experienceLevel: dropDownExperienceLevelValue,
+                        currentCompany: textFieldCurrentCompanyController.text,
+                        createdTime: getCurrentTimestamp,
+                        phoneNumber: textFieldPhoneNumberController.text,
+                        fullName: textFieldFullNameController.text,
+                        shortDescription:
+                            textFieldShortDescriptionController.text,
+                        email: currentUserEmail,
+                        password:
+                            valueOrDefault(currentUserDocument?.password, ''),
+                        photoUrl: uploadedFileUrl,
+                        uid: currentUserUid,
+                        profileType: 'Candidate',
+                        currentLocation:
+                            textFieldCurrentLocationController.text,
+                        registrationDatetime: getCurrentTimestamp,
+                        secondaryEmail: textFieldSecondaryEmailController.text,
+                        likedPosts: false,
+                        salary: '0',
+                        activeFlag: 'Y',
+                        subscriptionStatus: 'Y',
+                        subscriptionType: 'Basic',
+                        subscriptionStartDate: getCurrentTimestamp,
+                        subscriptionEndDate: getCurrentTimestamp,
+                        linkdlnUrl: textFieldLinkdlnController.text,
+                        website: textFieldWebsiteController.text,
+                        github: textFieldGithubController.text,
+                        viewType: 'Public',
+                        isGuest: false,
+                        title: 'Mr/Ms/Mrs',
                       );
                       await currentUserReference.update(usersUpdateData);
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AddWorkExpWidget(),
+                          builder: (context) => CandidateLandingPageWidget(),
                         ),
                       );
                     },
@@ -482,11 +870,11 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           ),
                           Expanded(
                             child: Text(
-                              'As an Individual',
+                              'Individual',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    fontFamily: 'Roboto',
                                     color:
                                         FlutterFlowTheme.of(context).grayIcon,
                                   ),
@@ -516,18 +904,47 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                     InkWell(
                       onTap: () async {
                         final usersUpdateData = createUsersRecordData(
-                          displayName: textController1.text,
-                          positionTitle: textController2.text,
-                          bio: textController3.text,
-                          experienceLevel: dropDownValue,
-                          currentCompany: textController4.text,
-                          salary: salaryRangeValue.toString(),
+                          displayName: textFieldFullNameController.text,
+                          positionTitle: textFieldPositionTitleController.text,
+                          bio: textFieldShortDescriptionController.text,
+                          experienceLevel: dropDownExperienceLevelValue,
+                          currentCompany:
+                              textFieldCurrentCompanyController.text,
+                          createdTime: getCurrentTimestamp,
+                          phoneNumber: textFieldPhoneNumberController.text,
+                          fullName: textFieldFullNameController.text,
+                          shortDescription:
+                              textFieldShortDescriptionController.text,
+                          email: currentUserEmail,
+                          password:
+                              valueOrDefault(currentUserDocument?.password, ''),
+                          photoUrl: uploadedFileUrl,
+                          uid: currentUserUid,
+                          profileType: 'Recruiter',
+                          currentLocation:
+                              textFieldCurrentLocationController.text,
+                          registrationDatetime: getCurrentTimestamp,
+                          secondaryEmail:
+                              textFieldSecondaryEmailController.text,
+                          likedPosts: false,
+                          salary: '0',
+                          activeFlag: 'Y',
+                          subscriptionStatus: 'Y',
+                          subscriptionType: 'Basic',
+                          subscriptionStartDate: getCurrentTimestamp,
+                          subscriptionEndDate: getCurrentTimestamp,
+                          linkdlnUrl: textFieldLinkdlnController.text,
+                          website: textFieldWebsiteController.text,
+                          github: textFieldGithubController.text,
+                          viewType: 'Public',
+                          isGuest: false,
+                          title: 'Mr/Ms/Mrs',
                         );
                         await currentUserReference.update(usersUpdateData);
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => CompanyProfileWidget(),
+                            builder: (context) => RecruiterLandingPageWidget(),
                           ),
                         );
                       },
@@ -556,11 +973,11 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             ),
                             Expanded(
                               child: Text(
-                                'As a Company',
+                                'Company',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color:
                                           FlutterFlowTheme.of(context).grayIcon,
                                     ),
@@ -583,47 +1000,107 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 44),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    NavBarPage(initialPage: 'HomePage_OLD'),
-                              ),
-                            );
-                          },
-                          text: 'Skip for Now',
-                          options: FFButtonOptions(
-                            width: 130,
-                            height: 50,
-                            color: FlutterFlowTheme.of(context).background,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .subtitle2
-                                .override(
-                                  fontFamily: 'Lexend Deca',
-                                  color:
-                                      FlutterFlowTheme.of(context).grayIcon400,
-                                ),
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1,
-                            ),
-                            borderRadius: 12,
+                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () async {
+                        final usersUpdateData = createUsersRecordData(
+                          displayName: textFieldFullNameController.text,
+                          positionTitle: textFieldPositionTitleController.text,
+                          bio: textFieldShortDescriptionController.text,
+                          experienceLevel: dropDownExperienceLevelValue,
+                          currentCompany:
+                              textFieldCurrentCompanyController.text,
+                          createdTime: getCurrentTimestamp,
+                          phoneNumber: textFieldPhoneNumberController.text,
+                          fullName: textFieldFullNameController.text,
+                          shortDescription:
+                              textFieldShortDescriptionController.text,
+                          email: currentUserEmail,
+                          password:
+                              valueOrDefault(currentUserDocument?.password, ''),
+                          photoUrl: uploadedFileUrl,
+                          uid: currentUserUid,
+                          profileType: 'Referrer',
+                          currentLocation:
+                              textFieldCurrentLocationController.text,
+                          registrationDatetime: getCurrentTimestamp,
+                          secondaryEmail:
+                              textFieldSecondaryEmailController.text,
+                          likedPosts: false,
+                          salary: '0',
+                          activeFlag: 'Y',
+                          subscriptionStatus: 'Y',
+                          subscriptionType: 'Basic',
+                          subscriptionStartDate: getCurrentTimestamp,
+                          subscriptionEndDate: getCurrentTimestamp,
+                          linkdlnUrl: textFieldLinkdlnController.text,
+                          website: textFieldWebsiteController.text,
+                          github: textFieldGithubController.text,
+                          viewType: 'Public',
+                          isGuest: false,
+                          title: 'Mr/Ms/Mrs',
+                        );
+                        await currentUserReference.update(usersUpdateData);
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ReferrerLandingPageWidget(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).tertiaryColor,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: FlutterFlowTheme.of(context).lineColor,
+                            width: 2,
                           ),
                         ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(12, 0, 12, 0),
+                              child: Icon(
+                                Icons.person_outline,
+                                color: FlutterFlowTheme.of(context).grayIcon,
+                                size: 44,
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Referrer',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color:
+                                          FlutterFlowTheme.of(context).grayIcon,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
+                              child: Icon(
+                                Icons.chevron_right_rounded,
+                                color: FlutterFlowTheme.of(context).grayIcon400,
+                                size: 24,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],

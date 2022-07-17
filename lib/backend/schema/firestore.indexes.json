@@ -15,48 +15,6 @@
       ]
     },
     {
-      "collectionGroup": "workHistory",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "user",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "endDate",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "appliedJobs",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userApplied",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "appliedTime",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "jobPosts",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "postedBy",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "timeCreated",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "chats",
       "queryScope": "COLLECTION",
       "fields": [
@@ -71,15 +29,111 @@
       ]
     },
     {
+      "collectionGroup": "jobPosts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "hiring_location",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "company_name",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "domain",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "industry_type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "job_title",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "posted_on",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "jobPosts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "uid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "posted_on",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "appliedJobs",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "jobApplied",
+          "fieldPath": "referrer_email_id",
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "appliedTime",
+          "fieldPath": "referrer_acceptance_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "applied_on_dt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "appliedJobs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "referrer_acceptance_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "candidate_acceptance_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "admin_verification_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "applied_on_dt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "appliedJobs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "referrer_acceptance_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "candidate_acceptance_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "admin_verification_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "recruiter_acceptance_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "applied_on_dt",
           "order": "DESCENDING"
         }
       ]

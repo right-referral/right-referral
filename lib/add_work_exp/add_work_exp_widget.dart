@@ -5,7 +5,6 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../onboarding/onboarding_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -59,7 +58,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
               'Work History',
               textAlign: TextAlign.start,
               style: FlutterFlowTheme.of(context).subtitle1.override(
-                    fontFamily: 'Lexend Deca',
+                    fontFamily: 'Roboto',
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -213,7 +212,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                                 .subtitle1
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Lexend Deca',
+                                                                      'Roboto',
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
@@ -232,7 +231,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                                               .subtitle2
                                                               .override(
                                                                 fontFamily:
-                                                                    'Lexend Deca',
+                                                                    'Roboto',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,
@@ -351,7 +350,7 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Lexend Deca',
+                                            fontFamily: 'Roboto',
                                             color: FlutterFlowTheme.of(context)
                                                 .grayIcon400,
                                           ),
@@ -403,13 +402,8 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         FFButtonWidget(
-                          onPressed: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => OnboardingWidget(),
-                              ),
-                            );
+                          onPressed: () {
+                            print('Button pressed ...');
                           },
                           text: 'Continue',
                           options: FFButtonOptions(
@@ -418,14 +412,14 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                             color: FlutterFlowTheme.of(context).primaryColor,
                             textStyle:
                                 FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Lexend Deca',
+                                      fontFamily: 'Roboto',
                                       color: Colors.white,
                                     ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1,
                             ),
-                            borderRadius: 12,
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                       ],

@@ -28,7 +28,7 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
         title: Text(
           'Messages',
           style: FlutterFlowTheme.of(context).title3.override(
-                fontFamily: 'Lexend Deca',
+                fontFamily: 'Roboto',
                 color: FlutterFlowTheme.of(context).tertiaryColor,
               ),
         ),
@@ -100,22 +100,17 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                           final chatInfo = snapshot.data ??
                               FFChatInfo(chatPreviewChatsRecord);
                           return FFChatPreview(
-                            onTap: chatInfo != null
-                                ? () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => DETAILSChatWidget(
-                                          chatUser:
-                                              chatInfo.otherUsers.length == 1
-                                                  ? chatInfo
-                                                      .otherUsersList.first
-                                                  : null,
-                                          chatRef:
-                                              chatInfo.chatRecord.reference,
-                                        ),
-                                      ),
-                                    )
-                                : null,
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DETAILSChatWidget(
+                                  chatUser: chatInfo.otherUsers.length == 1
+                                      ? chatInfo.otherUsersList.first
+                                      : null,
+                                  chatRef: chatInfo.chatRecord.reference,
+                                ),
+                              ),
+                            ),
                             lastChatText: chatInfo.chatPreviewMessage(),
                             lastChatTime:
                                 chatPreviewChatsRecord.lastMessageTime,

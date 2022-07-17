@@ -1,6 +1,5 @@
 import 'package:built_value/standard_json_plugin.dart';
 
-import 'job_posts_record.dart';
 import 'users_record.dart';
 import 'work_history_record.dart';
 import 'companies_record.dart';
@@ -8,6 +7,11 @@ import 'saved_jobs_record.dart';
 import 'applied_jobs_record.dart';
 import 'chats_record.dart';
 import 'chat_messages_record.dart';
+import 'candidate_profile_record.dart';
+import 'project_history_record.dart';
+import 'recruiter_profile_record.dart';
+import 'job_posts_record.dart';
+import 'candidature_workflow_record.dart';
 
 import 'index.dart';
 
@@ -19,7 +23,6 @@ part 'serializers.g.dart';
 const kDocumentReferenceField = 'Document__Reference__Field';
 
 @SerializersFor(const [
-  JobPostsRecord,
   UsersRecord,
   WorkHistoryRecord,
   CompaniesRecord,
@@ -27,6 +30,11 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   AppliedJobsRecord,
   ChatsRecord,
   ChatMessagesRecord,
+  CandidateProfileRecord,
+  ProjectHistoryRecord,
+  RecruiterProfileRecord,
+  JobPostsRecord,
+  CandidatureWorkflowRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())
